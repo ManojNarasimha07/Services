@@ -1,253 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandra_Motor_Services</title>
+    <meta name="description" content="Chandra Motor Works offers top-notch automotive services with a focus on quality and customer satisfaction.">
+    <title>Chandra Motor Works</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: rgb(50, 50, 50); /* Static dark gray background */
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+        .dynamic-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .services {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .scrollable-table {
+            overflow-x: auto;
+            white-space: nowrap;
+            margin: 20px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: rgba(200, 200, 200, 0.9);
+            margin: 5px;
+            width: 150px; /* Adjusted width for six columns */
+            color: black;
+            font-weight: bold;
+        }
+        .price {
+            color: darkred; /* Dark red color for prices */
+            font-weight: bold; /* Make price bold */
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        img.service-image {
+            width: 120px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dynamic-image {
+                max-height: 250px; /* Adjust image size on smaller screens */
+            }
+            th, td {
+                padding: 10px; /* Adjust padding for smaller screens */
+                font-size: 14px; /* Adjust font size for readability */
+            }
+        }
+    </style>
 </head>
 <body>
 
-<cover>
-<div class = "env">
-    <header class="header">
-        <div class="hv">
-            <h1 class ="hv">CHANDRA MOHAN</h1>
+<header id="header">
+    <h1>Chandra Motor Works</h1>
+    <img id="dynamicImage" class="dynamic-image" src="h1.jpg" alt="Chandra Motor Works Dynamic Image">
+</header>
 
-<div id=""></div>
-            <a> Expert in Submersible Motor Repairs and Installations. 
-                Over 10 years of experience in providing top-notch services 
-                in motor mechanics and water pump maintenance.<br><br> Offering professional repair services for residential and industrial clients at affordable rates.
-            </a>
+<div class="content">
+    <h2>About Us</h2>
+    <p>We provide top-notch services with a focus on quality and customer satisfaction.</p>
 
-      <h2><div id="add"> Kurnool, Andhra Pradesh</div></h2>  
-            <br>
-            <br>
-            
-            </div>
-    <br><br>
-            <style>
-                body {background-color: rgb(255, 255, 255);}
-                h1   {color: rgb(2, 2, 15);}
-                p    {color: rgb(0, 0, 0);}
-                .hv { text-align: center;
-                    color: #f7f7f7;
-                    padding-top: 5%;
-                    padding-left: 4%;
-                    padding-right: 4%;
-                }
-                .container{
-                    text-align: center;
-                    background-color: rgb(179, 177, 177);
-                        padding-left: 10%;
-                        padding-right: 10%;
-                        padding-top: 1%;
-                        padding-bottom: 1%;
-                        border-radius: 6px;
-                }
-                .header-content{
-                    justify-content: center;
-                    padding-bottom: 1%;
-                    padding-left: 3%;
-                    padding-right: 3%;
-                }
-
-                .Services{
-                    padding-bottom: 1%;
-                    padding-left: 3%;
-                    padding-right: 3%;
-}
-
-.container_S{
-                    background-color: rgb(82, 82, 82);
-                        padding-left: 1%;
-                        padding-top: 1%;
-                        padding-right: 1%;
-                        padding-bottom: 1%;
-                        border-radius: 6px;
-                        display: flex;
-                }
-                .env {
-                    background-color: rgb(6, 1, 24);
-                    border-radius: 25px;
-                }
-                .in_s{
-                    background-color: rgb(183, 183, 185);
-                    padding-left: 1%;
-                    padding-right: 1%;
-                    padding-top: 1%;
-                    padding-bottom: 7%;
-                    border-radius: 7px;
-                    height: 200px;
-                    width:300px;
-                }
-                .in_ss{
-                    background-color: rgb(204, 203, 203);
-                    padding-left: 1%;
-                    padding-right: 1%;
-                    padding-top: 1%;
-                    padding-bottom: 1%;
-                    border-radius: 7px;
-                    height: 200px;
-                    width:300px;
-                }
-                img{
-                    width:100%;
-                    height:100%;
-                    object-fit: cover;
-                }
-                
-                .container_E{
-                    background-color: rgb(77, 77, 77);
-                    padding-left: 1%;
-                    padding-top: 1%;
-                    padding-right: 1%;
-                    padding-bottom: 1%;
-                    border-radius: 6px;
-                    display: flex;
-                }
-                .container-pack{
-                    justify-content: center;
-                }
-                
-                </style>
-    </header>
-
-    <section class="header-content">
-        <div class="container">
-            
+    <div class="services">
+        <h2>2 INCH MATERIALS</h2>
+        <div class="scrollable-table">
+            <table>
+                <tr>
+                    <th>Material 1</th>
+                    <th>Material 2</th>
+                    <th>Material 3</th>
+                    <th>Material 4</th>
+                    <th>Material 5</th>
+                    <th>Material 6</th>
+                </tr>
+                <!-- 15 rows with example data -->
+                <tr>
+                    <td>
+                        <img class="service-image" src="s1.jpg" alt="Material 1">
+                        <p>Material 1 Name</p>
+                        <p class="price">Price: $10</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service2.png" alt="Material 2">
+                        <p>Material 2 Name</p>
+                        <p class="price">Price: $12</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service3.png" alt="Material 3">
+                        <p>Material 3 Name</p>
+                        <p class="price">Price: $15</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service4.png" alt="Material 4">
+                        <p>Material 4 Name</p>
+                        <p class="price">Price: $8</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service5.png" alt="Material 5">
+                        <p>Material 5 Name</p>
+                        <p class="price">Price: $20</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service6.png" alt="Material 6">
+                        <p>Material 6 Name</p>
+                        <p class="price">Price: $18</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service7.png" alt="Material 7">
+                        <p>Material 7 Name</p>
+                        <p class="price">Price: $9</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service8.png" alt="Material 8">
+                        <p>Material 8 Name</p>
+                        <p class="price">Price: $11</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service9.png" alt="Material 9">
+                        <p>Material 9 Name</p>
+                        <p class="price">Price: $13</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service10.png" alt="Material 10">
+                        <p>Material 10 Name</p>
+                        <p class="price">Price: $14</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service11.png" alt="Material 11">
+                        <p>Material 11 Name</p>
+                        <p class="price">Price: $16</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service12.png" alt="Material 12">
+                        <p>Material 12 Name</p>
+                        <p class="price">Price: $19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service13.png" alt="Material 13">
+                        <p>Material 13 Name</p>
+                        <p class="price">Price: $10</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service14.png" alt="Material 14">
+                        <p>Material 14 Name</p>
+                        <p class="price">Price: $12</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service15.png" alt="Material 15">
+                        <p>Material 15 Name</p>
+                        <p class="price">Price: $15</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service16.png" alt="Material 16">
+                        <p>Material 16 Name</p>
+                        <p class="price">Price: $8</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service17.png" alt="Material 17">
+                        <p>Material 17 Name</p>
+                        <p class="price">Price: $20</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service18.png" alt="Material 18">
+                        <p>Material 18 Name</p>
+                        <p class="price">Price: $18</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service19.png" alt="Material 19">
+                        <p>Material 19 Name</p>
+                        <p class="price">Price: $9</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service20.png" alt="Material 20">
+                        <p>Material 20 Name</p>
+                        <p class="price">Price: $11</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service21.png" alt="Material 21">
+                        <p>Material 21 Name</p>
+                        <p class="price">Price: $13</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service22.png" alt="Material 22">
+                        <p>Material 22 Name</p>
+                        <p class="price">Price: $14</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service23.png" alt="Material 23">
+                        <p>Material 23 Name</p>
+                        <p class="price">Price: $16</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service24.png" alt="Material 24">
+                        <p>Material 24 Name</p>
+                        <p class="price">Price: $19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service25.png" alt="Material 25">
+                        <p>Material 25 Name</p>
+                        <p class="price">Price: $10</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service26.png" alt="Material 26">
+                        <p>Material 26 Name</p>
+                        <p class="price">Price: $12</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service27.png" alt="Material 27">
+                        <p>Material 27 Name</p>
+                        <p class="price">Price: $15</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service28.png" alt="Material 28">
+                        <p>Material 28 Name</p>
+                        <p class="price">Price: $8</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service29.png" alt="Material 29">
+                        <p>Material 29 Name</p>
+                        <p class="price">Price: $20</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service30.png" alt="Material 30">
+                        <p>Material 30 Name</p>
+                        <p class="price">Price: $18</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service31.png" alt="Material 31">
+                        <p>Material 31 Name</p>
+                        <p class="price">Price: $9</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service32.png" alt="Material 32">
+                        <p>Material 32 Name</p>
+                        <p class="price">Price: $11</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service33.png" alt="Material 33">
+                        <p>Material 33 Name</p>
+                        <p class="price">Price: $13</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service34.png" alt="Material 34">
+                        <p>Material 34 Name</p>
+                        <p class="price">Price: $14</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service35.png" alt="Material 35">
+                        <p>Material 35 Name</p>
+                        <p class="price">Price: $16</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service36.png" alt="Material 36">
+                        <p>Material 36 Name</p>
+                        <p class="price">Price: $19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service37.png" alt="Material 37">
+                        <p>Material 37 Name</p>
+                        <p class="price">Price: $10</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service38.png" alt="Material 38">
+                        <p>Material 38 Name</p>
+                        <p class="price">Price: $12</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service39.png" alt="Material 39">
+                        <p>Material 39 Name</p>
+                        <p class="price">Price: $15</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service40.png" alt="Material 40">
+                        <p>Material 40 Name</p>
+                        <p class="price">Price: $8</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service41.png" alt="Material 41">
+                        <p>Material 41 Name</p>
+                        <p class="price">Price: $20</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service42.png" alt="Material 42">
+                        <p>Material 42 Name</p>
+                        <p class="price">Price: $18</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service43.png" alt="Material 43">
+                        <p>Material 43 Name</p>
+                        <p class="price">Price: $9</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service44.png" alt="Material 44">
+                        <p>Material 44 Name</p>
+                        <p class="price">Price: $11</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service45.png" alt="Material 45">
+                        <p>Material 45 Name</p>
+                        <p class="price">Price: $13</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service46.png" alt="Material 46">
+                        <p>Material 46 Name</p>
+                        <p class="price">Price: $14</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service47.png" alt="Material 47">
+                        <p>Material 47 Name</p>
+                        <p class="price">Price: $16</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service48.png" alt="Material 48">
+                        <p>Material 48 Name</p>
+                        <p class="price">Price: $19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service49.png" alt="Material 49">
+                        <p>Material 49 Name</p>
+                        <p class="price">Price: $10</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service50.png" alt="Material 50">
+                        <p>Material 50 Name</p>
+                        <p class="price">Price: $12</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service51.png" alt="Material 51">
+                        <p>Material 51 Name</p>
+                        <p class="price">Price: $15</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service52.png" alt="Material 52">
+                        <p>Material 52 Name</p>
+                        <p class="price">Price: $8</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service53.png" alt="Material 53">
+                        <p>Material 53 Name</p>
+                        <p class="price">Price: $20</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service54.png" alt="Material 54">
+                        <p>Material 54 Name</p>
+                        <p class="price">Price: $18</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="service-image" src="service55.png" alt="Material 55">
+                        <p>Material 55 Name</p>
+                        <p class="price">Price: $9</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service56.png" alt="Material 56">
+                        <p>Material 56 Name</p>
+                        <p class="price">Price: $11</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service57.png" alt="Material 57">
+                        <p>Material 57 Name</p>
+                        <p class="price">Price: $13</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service58.png" alt="Material 58">
+                        <p>Material 58 Name</p>
+                        <p class="price">Price: $14</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service59.png" alt="Material 59">
+                        <p>Material 59 Name</p>
+                        <p class="price">Price: $16</p>
+                    </td>
+                    <td>
+                        <img class="service-image" src="service60.png" alt="Material 60">
+                        <p>Material 60 Name</p>
+                        <p class="price">Price: $19</p>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </section>
-
-    <section class="Services">
-        <div class="container_S">
-            <div class="in_ss">
-            <h1>SERVICES!!</h1>
-            <aa ><h1 id="demo">SUBMERSIBLE MOTOR REPAIR</h1></aa></div>
-            
-            <div>&nbsp;&nbsp;</div>
-            
-            <div class="in_ss">
-                <img id="pic3" src="motor1.png" alt="Submersible Motor Repair">
-            </div>
-
-            <div>&nbsp;&nbsp;</div>
-
-            <div class="in_ss">
-                <img id="pic1" src="motor2.png" alt="Water Pump Installation">
-            </div>
- 
-            <div>&nbsp;&nbsp;</div>
-
-            <div class="in_ss">
-                <img id="pic2" src="motor3.png" alt="Industrial Motor Services">
-            </div>
-            
-        </div>
-    </section>
-
-    <section class="header-content">
-        <div class="container-pack">
-        <div class="container_E">
-            <div class="in_s">
-
-                <h1>Experience</h1>
-                <div class="education-item">
-                    <h3>Over 10 Years of Experience</h3>
-                    <p>Serving both residential and industrial sectors with a focus on quality and customer satisfaction.</p>
-                </div>
-            </div>
-
-            <div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div>
-
-            <div class="in_s">
-                <h1>Skills</h1>
-                <ul class="skills-list">
-                    Submersible Motor Repair
-                    <br>Water Pump Installation
-                    <br>Industrial Motor Services
-                    <br>Electrical Troubleshooting
-                </ul>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="header-content">
-        <div class="container">
-            <h1>OUR PROJECTS</h1>
-            <div class="project">
-                <h4>MAJOR WATER PUMP INSTALLATION FOR RESIDENTIAL COMPLEX</h4>
-                <p>Installed and maintained water pump systems for a residential complex, ensuring uninterrupted water supply.</p>
-            </div>
-
-            <div class="project">
-                <h4>INDUSTRIAL MOTOR MAINTENANCE CONTRACT</h4>
-                <p>Maintained submersible motors for an industrial unit, improving operational efficiency and reducing downtime.</p>
-            </div>
-
-            <div class="project">
-                <h4>AGRICULTURAL PUMP INSTALLATION</h4>
-                <p>Installed submersible pumps for agricultural irrigation systems, boosting water accessibility for farmers.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="header-content">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: chandramohan_motors@gmail.com</p>
-            <p>Phone: 9876543210</p>
-            <aaa> Address: Kurnool, Andhra Pradesh, 518543</aaa><br>
-        </div>
-    </section>
-
-    <footer class="header-content">
-        <div class="container">
-            <div class="in">
-                GET Your<div  id="demm"> Submersible Motor Services</div> starting at ₹500
-                "pay only if you are satisfied with the service"
-            </div>
-
-            <p>&copy; 2024 Chandra Motor Services. All rights reserved.</p>
-        </div>
-    </footer>
-
+    </div>
 </div>
-</cover>
+
+<footer>
+    <p>&copy; 2024 Chandra Motor Works. All rights reserved.</p>
+</footer>
+
 </body>
-<script>
-
-const dynamictext1 = [ "Submersible Motor Repair","Water Pump Installation","Industrial Motor Services","Agricultural Pump Setup", "Electrical Troubleshooting"];
-const dynamictext2 = [ "Motor Repairs","Pump Installations","Industrial Services","Irrigation Systems", "Electrical Fixes"];
-const dynamicpic1=["motor1.png","motor2.png","motor3.png","motor4.png","motor5.png"]
-const dynamicpic2=["pump1.png","pump2.png","pump3.png","pump4.png","pump5.png"]
-const dynamicpic3=["industrial1.png","industrial2.png","industrial3.png","industrial4.png","industrial5.png"]
-const dynamictext3 = [ "Kurnool, Andhra Pradesh","Submersible Motor Expert","Professional Motor Services","Water Pump Installations","Quality Repairs"];
-
-    
-    console.debug("hello");
-
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-   }
-   async function Tutor() {
-      
-      let x=1
-      while(true){        
-         await sleep(3000);
-
-         document.getElementById("add").innerHTML=dynamictext3[x%5]
-         document.getElementById("demo").innerHTML=dynamictext1[x%5];
-         document.getElementById("demm").innerHTML=dynamictext2[x%5];
-         document.getElementById('pic3').src=dynamicpic1[x%5];
-         document.getElementById('pic1').src=dynamicpic2[x%5];
-         document.getElementById('pic2').src=dynamicpic3[x%5];
-         x=x+1;
-      }
-
-   }
-Tutor()
-
-</script>
 </html>
