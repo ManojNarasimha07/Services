@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chandra Motor Works offers top-notch automotive services with a focus on quality and customer satisfaction.">
+    <meta name="description" content="Chandra Motor Works offers top-notch motor services with a focus on quality and farmer satisfaction.">
     <title>Chandra Motor Works</title>
     <style>
         body {
@@ -37,24 +37,37 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         .scrollable-table {
-            overflow-x: auto;
-            white-space: nowrap;
-            margin: 20px 0;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            max-height: 300px; /* Set a max height for vertical scrolling */
+            position: relative;
+            display: inline-block;
+            width: 100%; /* Keep the width full */
         }
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 800px; /* Fixed width for the table */
+            table-layout: fixed; /* Ensure the layout is consistent */
         }
         th, td {
             padding: 20px;
             text-align: center;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: rgba(200, 200, 200, 0.9);
-            margin: 5px;
-            width: 150px;
+            background-color: rgb(200, 200, 200); /* Solid color */
             color: black;
             font-weight: bold;
+            min-width: 150px; /* Ensures cells have a minimum width */
+        }
+        th {
+            background: rgb(100, 100, 100); /* Solid color for header */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        td:first-child {
+            background: rgb(100, 100, 100); /* Solid color for first column */
+            position: sticky;
+            left: 0;
+            z-index: 5;
         }
         .price {
             color: darkred;
@@ -76,6 +89,9 @@
             width: 120px;
             height: auto;
         }
+        .hidden {
+            display: none;
+        }
         @media (max-width: 768px) {
             .dynamic-image {
                 max-height: 250px;
@@ -95,152 +111,182 @@
 </header>
 
 <div class="content">
-    <h2> PVC MATERIALS </h2>
-    <p>We provide top-notch PVC's with a focus on quality and customer satisfaction</p>
+    <h1>PRICES</h1>
+    <h2>Select a Section </h2>
+    <button onclick="showTable('pvc')">PVC Materials</button>
+    <button onclick="showTable('iron')">Iron Materials</button>
+    <button onclick="showTable('other')">Other Products</button>
 
-    <div class="services">
-        <h2>2 INCH MATERIALS</h2>
+    <div id="pvc" class="services">
+        <h2>PVC MATERIALS</h2>
         <div class="scrollable-table">
             <table>
-                <tr>
-                    <th>MODEL 1</th>
-                    <th>MODEL 2</th>
-                    <th>MODEL 3</th>
-                    <th>MODEL 4</th>
-                    <th>MODEL 5</th>
-                    <th>MODEL 6</th>
-                </tr>
-                <!-- 10 rows with example data -->
-                <tr>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 1">
-                        <p>Tee PN 4</p>
-                        <p class="price">Price: $10</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 2">
-                        <p>Tee PN 6</p>
-                        <p class="price">Price: $12</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 3">
-                        <p>Tee PN 10</p>
-                        <p class="price">Price: $15</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 4">
-                        <p>Material 4 Name</p>
-                        <p class="price">Price: $8</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 5">
-                        <p>Material 5 Name</p>
-                        <p class="price">Price: $20</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="t.jpg" alt="Material 6">
-                        <p>Material 6 Name</p>
-                        <p class="price">Price: $18</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="service-image" src="service7.png" alt="Material 7">
-                        <p>Material 7 Name</p>
-                        <p class="price">Price: $9</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service8.png" alt="Material 8">
-                        <p>Material 8 Name</p>
-                        <p class="price">Price: $11</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service9.png" alt="Material 9">
-                        <p>Material 9 Name</p>
-                        <p class="price">Price: $13</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service10.png" alt="Material 10">
-                        <p>Material 10 Name</p>
-                        <p class="price">Price: $14</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service11.png" alt="Material 11">
-                        <p>Material 11 Name</p>
-                        <p class="price">Price: $16</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service12.png" alt="Material 12">
-                        <p>Material 12 Name</p>
-                        <p class="price">Price: $19</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="service-image" src="service13.png" alt="Material 13">
-                        <p>Material 13 Name</p>
-                        <p class="price">Price: $10</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service14.png" alt="Material 14">
-                        <p>Material 14 Name</p>
-                        <p class="price">Price: $12</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service15.png" alt="Material 15">
-                        <p>Material 15 Name</p>
-                        <p class="price">Price: $15</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service16.png" alt="Material 16">
-                        <p>Material 16 Name</p>
-                        <p class="price">Price: $8</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service17.png" alt="Material 17">
-                        <p>Material 17 Name</p>
-                        <p class="price">Price: $20</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service18.png" alt="Material 18">
-                        <p>Material 18 Name</p>
-                        <p class="price">Price: $18</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="service-image" src="service19.png" alt="Material 19">
-                        <p>Material 19 Name</p>
-                        <p class="price">Price: $9</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service20.png" alt="Material 20">
-                        <p>Material 20 Name</p>
-                        <p class="price">Price: $11</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service21.png" alt="Material 21">
-                        <p>Material 21 Name</p>
-                        <p class="price">Price: $13</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service22.png" alt="Material 22">
-                        <p>Material 22 Name</p>
-                        <p class="price">Price: $14</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service23.png" alt="Material 23">
-                        <p>Material 23 Name</p>
-                        <p class="price">Price: $16</p>
-                    </td>
-                    <td>
-                        <img class="service-image" src="service24.png" alt="Material 24">
-                        <p>Material 24 Name</p>
-                        <p class="price">Price: $19</p>
-                    </td>
-                </tr>
-                <!-- Repeat similar rows for a total of 10 -->
-                <!-- You can continue adding rows similarly -->
+                <thead>
+                    <tr>
+                        <th>MODEL 1</th>
+                        <th>MODEL 2</th>
+                        <th>MODEL 3</th>
+                        <th>MODEL 4</th>
+                        <th>MODEL 5</th>
+                        <th>MODEL 6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="t.jpg" alt="Material 1">
+                            <p>Tee PN 4</p>
+                            <p class="price">Price: $10</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service2.png" alt="Material 2">
+                            <p>Tee PN 6</p>
+                            <p class="price">Price: $12</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service3.png" alt="Material 3">
+                            <p>Tee PN 10</p>
+                            <p class="price">Price: $15</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service4.png" alt="Material 4">
+                            <p>Material 4 Name</p>
+                            <p class="price">Price: $8</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service5.png" alt="Material 5">
+                            <p>Material 5 Name</p>
+                            <p class="price">Price: $20</p>
+                        </td>
+                        <td>
+                            <p class="price">Price: $18</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="service7.png" alt="Material 7">
+                            <p>Material 7 Name</p>
+                            <p class="price">Price: $9</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service8.png" alt="Material 8">
+                            <p>Material 8 Name</p>
+                            <p class="price">Price: $11</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service9.png" alt="Material 9">
+                            <p>Material 9 Name</p>
+                            <p class="price">Price: $13</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service10.png" alt="Material 10">
+                            <p>Material 10 Name</p>
+                            <p class="price">Price: $14</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service11.png" alt="Material 11">
+                            <p>Material 11 Name</p>
+                            <p class="price">Price: $16</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="service12.png" alt="Material 12">
+                            <p>Material 12 Name</p>
+                            <p class="price">Price: $19</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="iron" class="services hidden">
+        <h2>IRON MATERIALS</h2>
+        <div class="scrollable-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>MODEL 1</th>
+                        <th>MODEL 2</th>
+                        <th>MODEL 3</th>
+                        <th>MODEL 4</th>
+                        <th>MODEL 5</th>
+                        <th>MODEL 6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="iron1.jpg" alt="Iron Material 1">
+                            <p>Iron Beam A</p>
+                            <p class="price">Price: $50</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="iron2.jpg" alt="Iron Material 2">
+                            <p>Iron Beam B</p>
+                            <p class="price">Price: $60</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="iron3.jpg" alt="Iron Material 3">
+                            <p>Iron Beam C</p>
+                            <p class="price">Price: $55</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="iron4.jpg" alt="Iron Material 4">
+                            <p>Iron Plate D</p>
+                            <p class="price">Price: $70</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="iron5.jpg" alt="Iron Material 5">
+                            <p>Iron Rod E</p>
+                            <p class="price">Price: $45</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="iron6.jpg" alt="Iron Material 6">
+                            <p>Iron Sheet F</p>
+                            <p class="price">Price: $40</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="other" class="services hidden">
+        <h2>OTHER PRODUCTS</h2>
+        <div class="scrollable-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>PRODUCT 1</th>
+                        <th>PRODUCT 2</th>
+                        <th>PRODUCT 3</th>
+                        <th>PRODUCT 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="other1.jpg" alt="Other Product 1">
+                            <p>Product A</p>
+                            <p class="price">Price: $30</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="other2.jpg" alt="Other Product 2">
+                            <p>Product B</p>
+                            <p class="price">Price: $40</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="other3.jpg" alt="Other Product 3">
+                            <p>Product C</p>
+                            <p class="price">Price: $25</p>
+                        </td>
+                        <td>
+                            <img class="service-image" src="other4.jpg" alt="Other Product 4">
+                            <p>Product D</p>
+                            <p class="price">Price: $35</p>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -261,6 +307,20 @@
     }
 
     setInterval(changeImage, 3000); // Change image every 3 seconds
+
+    function showTable(type) {
+        document.getElementById('pvc').classList.add('hidden');
+        document.getElementById('iron').classList.add('hidden');
+        document.getElementById('other').classList.add('hidden'); // Hide other products
+
+        if (type) {
+            document.getElementById(type).classList.remove('hidden');
+        }
+    }
+
+    window.onload = function() {
+        showTable('pvc'); // Show PVC materials by default
+    };
 </script>
 
 </body>
