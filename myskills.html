@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chandra Motor Works offers top-notch motor services with a focus on quality and farmer satisfaction.">
     <title>Chandra Motor Works</title>
+    <h3>(   !UNDER DEVELOPMENT )</h3>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,7 +17,6 @@
         header {
             text-align: center;
             padding: 50px 20px;
-            position: relative;
         }
         .dynamic-image {
             width: 100%;
@@ -37,37 +37,50 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
         .scrollable-table {
-            overflow: auto; /* Enable both vertical and horizontal scrolling */
-            max-height: 300px; /* Set a max height for vertical scrolling */
+            overflow-x: auto;
+            max-height: 500px;
             position: relative;
             display: inline-block;
-            width: 800px; /* Fixed width for the table */
+            width: 100%;
         }
-        table {
+        .pvc {
             border-collapse: collapse;
-            width: 100%; /* Full width of the scrollable area */
-            table-layout: fixed; /* Fixed layout for columns */
+            width: 1300px;
+            table-layout: fixed;
+        }
+        .iron {
+            border-collapse: collapse;
+            width: 700px;
+            table-layout: fixed;
+        }
+
+        .wires {
+            border-collapse: collapse;
+            width: 450px;
+            table-layout: fixed;
         }
         th, td {
             padding: 20px;
             text-align: center;
             border: 1px solid #ddd;
-            background-color: rgb(200, 200, 200); /* Solid color */
+            background-color: rgb(200, 200, 200);
             color: black;
             font-weight: bold;
-            min-width: 150px; /* Ensures cells have a minimum width */
+            min-width: 150px;
+            max-height: 150px;
         }
         th {
-            background: rgb(100, 100, 100); /* Solid color for header */
+            background: rgb(100, 100, 100);
             position: sticky;
             top: 0;
             z-index: 10;
         }
         td:first-child {
-            background: rgb(100, 100, 100); /* Solid color for first column */
+            background: rgb(20,20,40);
             position: sticky;
             left: 0;
             z-index: 5;
+            color:rgb(255,255,255)
         }
         .price {
             color: darkred;
@@ -78,19 +91,36 @@
             color: white;
             text-align: center;
             padding: 20px 0;
-            position: relative;
-            bottom: 0;
             width: 100%;
         }
         h1, h2 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         img.service-image {
-            width: 120px;
-            height: auto;
+            width: 100%;
+            height: 10%;
         }
         .hidden {
             display: none;
+        }
+        .button-container {
+            overflow-x: auto; /* Horizontal scrolling */
+            white-space: nowrap; /* Prevent line breaks */
+            margin: 20px 0;
+             /* Add some margin */
+        }
+        button {
+            padding: 10px 20px; /* Increased padding for larger buttons */
+            font-size: 25px; /* Larger font size */
+            margin-right: 10px; /* Space between buttons */
+            background-color: #333; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+        }
+        button:hover {
+            background-color: #555; /* Darker on hover */
         }
         @media (max-width: 768px) {
             .dynamic-image {
@@ -112,88 +142,366 @@
 
 <div class="content">
     <h1>PRICES</h1>
-    <h2>Select a Section </h2>
-    <button onclick="showTable('pvc')">PVC Materials</button>
-    <button onclick="showTable('iron')">Iron Materials</button>
-    <button onclick="showTable('other')">Other Products</button>
+    <h2>Select a Section</h2>
+    <div class="button-container">
+        <button onclick="showTable('pvc')">PVC FIITINGS</button>
+        <button onclick="showTable('iron')">IRON FITTINGS</button>
+        <button onclick="showTable('other')">WIRES AND CABLES</button>
+        <button onclick="showTable('concrete')">MOTORS & STARTERS</button>
+        <button onclick="showTable('wood')">OTHER PRODUCTS</button>
+
+    </div>
 
     <div id="pvc" class="services">
         <h2>PVC MATERIALS</h2>
         <div class="scrollable-table">
-            <table>
+            <table class="pvc">
                 <thead>
                     <tr>
-                        <th>MODEL 1</th>
-                        <th>MODEL 2</th>
-                        <th>MODEL 3</th>
-                        <th>MODEL 4</th>
-                        <th>MODEL 5</th>
-                        <th>MODEL 6</th>
+                        <th>______</th>
+                        <th>2" </th>
+                        <th>2 1/2"</th>
+                        <th>3"</th>
+                        <th>4"</th>
+                        <th>5"</th>
+                        <th>2"x 2 1/2"</th>
+                        <th>2" x 3"</th>
+                        <th>2" x 4"</th>
+                        <th>2 1/2" x 3"</th>
+                        <th>2 1/2" x 4"</th>
+                        <th>3" x 4"</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <img class="service-image" src="t.jpg" alt="Material 1">
-                            <p>Tee PN 4</p>
-                            <p class="price">Price: $10</p>
+                            <img class="service-image" src="c4.png" alt="Material 1">
+                            <p>CUPPLING PN4</p>
+
                         </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
                         <td>
-                            <img class="service-image" src="service2.png" alt="Material 2">
-                            <p>Tee PN 6</p>
-                            <p class="price">Price: $12</p>
+                            <img class="service-image" src="c6.png" alt="Material 1">
+                            <p>CUPPLING PN6</p>
+
                         </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
                         <td>
-                            <img class="service-image" src="service3.png" alt="Material 3">
-                            <p>Tee PN 10</p>
-                            <p class="price">Price: $15</p>
+                            <img class="service-image" src="c10.png" alt="Material 1">
+                            <p>CUPPLING PN10</p>
+
                         </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
                         <td>
-                            <img class="service-image" src="service4.png" alt="Material 4">
-                            <p>Material 4 Name</p>
-                            <p class="price">Price: $8</p>
+                            <img class="service-image" src="el4.png" alt="Material 1">
+                            <p>ELBOW PN4 </p>
+
                         </td>
+
+                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+                   </tr>
+
+                    <tr>
                         <td>
-                            <img class="service-image" src="service5.png" alt="Material 5">
-                            <p>Material 5 Name</p>
-                            <p class="price">Price: $20</p>
+                            <img class="service-image" src="el6.png" alt="Material 1">
+                            <p>ELBOW PN6</p>
+
                         </td>
-                        <td>
-                            <p class="price">Price: $18</p>
-                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
                     </tr>
                     <tr>
                         <td>
-                            <img class="service-image" src="service7.png" alt="Material 7">
-                            <p>Material 7 Name</p>
-                            <p class="price">Price: $9</p>
+                            <img class="service-image" src="el10.png" alt="Material 1">
+                            <p>ELBOW PN10</p>
+
                         </td>
-                        <td>
-                            <img class="service-image" src="service8.png" alt="Material 8">
-                            <p>Material 8 Name</p>
-                            <p class="price">Price: $11</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="service9.png" alt="Material 9">
-                            <p>Material 9 Name</p>
-                            <p class="price">Price: $13</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="service10.png" alt="Material 10">
-                            <p>Material 10 Name</p>
-                            <p class="price">Price: $14</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="service11.png" alt="Material 11">
-                            <p>Material 11 Name</p>
-                            <p class="price">Price: $16</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="service12.png" alt="Material 12">
-                            <p>Material 12 Name</p>
-                            <p class="price">Price: $19</p>
-                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
                     </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="elt.png" alt="Material 1">
+                            <p>ELBOW THREAD</p>
+
+                        </td>
+                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="el45.png" alt="Material 1">
+                            <p>45' ELBOW</p>
+
+                        </td>
+                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="lb.png" alt="Material 1">
+                            <p>LONG BEND</p>
+
+                        </td>
+                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="t4.png" alt="Material 1">
+                            <p>TEE PN4 </p>
+
+                        </td>
+
+                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+                   </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="t6.png" alt="Material 1">
+                            <p>TEE PN6</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="t10.png" alt="Material 1">
+                            <p>TEE PN10</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="dt.png" alt="Material 1">
+                            <p>DOOR TEE</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="dl.png" alt="Material 1">
+                            <p>DOOR ELBOW</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="mta.png" alt="Material 1">
+                            <p>MTA</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="rmta.png" alt="Material 1">
+                            <p>R MTA</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="fta.png" alt="Material 1">
+                            <p>FTA</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="rfta.png" alt="Material 1">
+                            <p>R FTA</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="cp.png" alt="Material 1">
+                            <p>CAP PLAIN</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ct.png" alt="Material 1">
+                            <p>CAP THREAD</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="bw.png" alt="Material 1">
+                            <p>BALL WALL</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ubw.png" alt="Material 1">
+                            <p> UNION BALLWALL</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="nondrop.png" alt="Material 1">
+                            <p>NON STOP</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="pipe.png" alt="Material 1">
+                            <p> PIPES</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="bh.png" alt="Material 1">
+                            <p> BUSHES</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="vt.png" alt="Material 1">
+                            <p> VENTS</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="rc4.png" alt="Material 1">
+                            <p> REPAIR CUPPLING PN4</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="rc6.png" alt="Material 1">
+                            <p> REPAIR CUPPLING PN6</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="rsa.png" alt="Material 1">
+                            <p> REPAIR SADDLE</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ciw.png" alt="Material 1">
+                            <p> CI JOINT WHITE</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="cib.png" alt="Material 1">
+                            <p> CI JOINT BLACK</p>
+
+                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
                 </tbody>
             </table>
         </div>
@@ -202,102 +510,494 @@
     <div id="iron" class="services hidden">
         <h2>IRON MATERIALS</h2>
         <div class="scrollable-table">
-            <table>
+            <table class="iron" >
                 <thead>
                     <tr>
-                        <th>MODEL 1</th>
-                        <th>MODEL 2</th>
-                        <th>MODEL 3</th>
-                        <th>MODEL 4</th>
-                        <th>MODEL 5</th>
-                        <th>MODEL 6</th>
+                        <th>______</th>
+                        <th>2" </th>
+                        <th>2 1/2"</th>
+                        <th>3"</th>
+                        <th>2"x 2 1/2"</th>
+                        <th>2" x 3"</th>
+                        <th>2 1/2" x 3"</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <img class="service-image" src="iron1.jpg" alt="Iron Material 1">
-                            <p>Iron Beam A</p>
-                            <p class="price">Price: $50</p>
+                            <img class="service-image" src="icu.png" alt="Material 1">
+                            <p>CUPPLING (IRON)</p>
+
                         </td>
-                        <td>
-                            <img class="service-image" src="iron2.jpg" alt="Iron Material 2">
-                            <p>Iron Beam B</p>
-                            <p class="price">Price: $60</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="iron3.jpg" alt="Iron Material 3">
-                            <p>Iron Beam C</p>
-                            <p class="price">Price: $55</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="iron4.jpg" alt="Iron Material 4">
-                            <p>Iron Plate D</p>
-                            <p class="price">Price: $70</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="iron5.jpg" alt="Iron Material 5">
-                            <p>Iron Sheet E</p>
-                            <p class="price">Price: $45</p>
-                        </td>
-                        <td>
-                            <img class="service-image" src="iron6.jpg" alt="Iron Material 6">
-                            <p>Iron Rod F</p>
-                            <p class="price">Price: $30</p>
-                        </td>
+
+                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
                     </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="icu.png" alt="Material 1">
+                            <p>CUPPLING (STEEL)</p>
+
+                        </td>
+
+                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="iel.png" alt="Material 1">
+                            <p>ELBOW</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ibe.png" alt="Material 1">
+                            <p>BEND ROYAL</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+                   </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ibe.png" alt="Material 1">
+                            <p>BEND GI</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ite.png" alt="Material 1">
+                            <p>TEE </p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ite.png" alt="Material 1">
+                            <p>TEE for Tap</p>
+
+                        </td>
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ici.png" alt="Material 1">
+                            <p>CAP T IN</p>
+
+                        </td>
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ico.png" alt="Material 1">
+                            <p>CAP T OUT</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+                   </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="pipe.png" alt="Material 1">
+                            <p>PIPE</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="nippal.png" alt="Material 1">
+                            <p>PIPE NIPPAL 1F</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="nippal.png" alt="Material 1">
+                            <p>PIPE NIPPAL 2F</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="nippal.png" alt="Material 1">
+                            <p>PIPE NIPPAL 3F</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="nippal.png" alt="Material 1">
+                            <p>PIPE NIPPAL 4F</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ibo.png" alt="Material 1">
+                            <p>BORE COVER</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="iad.png" alt="Material 1">
+                            <p>ADAPTOR ASHIRWAD</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="ipl.png" alt="Material 1">
+                            <p>PLANGE</p>
+
+                        </td>
+
+    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+
+                    </tr>
+
+
+
                 </tbody>
             </table>
         </div>
     </div>
 
     <div id="other" class="services hidden">
-        <h2>OTHER PRODUCTS</h2>
+        <h2>WIRES AND CABLES</h2>
         <div class="scrollable-table">
-            <table>
+            <table class="wires">
                 <thead>
                     <tr>
-                        <th>MODEL 1</th>
-                        <th>MODEL 2</th>
-                        <th>MODEL 3</th>
-                        <th>MODEL 4</th>
-                        <th>MODEL 5</th>
-                        <th>MODEL 6</th>
+                        <th>_____</th>
+                        <th>TYPE 1</th>
+                        <th>TYPE 2</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <img class="service-image" src="other1.jpg" alt="Other Product 1">
-                            <p>Other Product A</p>
-                            <p class="price">Price: $25</p>
+                            <img class="service-image" src="cable.png" alt="Other Product 1">
+                            <p>MOTOR CABLE WIRE</p>
+                        </td>
+                        <td><p>SIZE 2.5 sqmm</p> <p class="price">Price: Rs 00/-</p></td>                           <td><p>SIZE 4.0 sqmm</p> <p class="price">Price: Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="cwire.png" alt="Other Product 1">
+                            <p>COPER WIRE</p>
+                        </td>
+                        <td><p>SMALL (6 mm)</p> <p class="price">Price: Rs 00/-</p></td>                           <td><p>BIG (10 mm)</p> <p class="price">Price: Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.0</p>
+                        </td>
+                        <td> <p>FINOLEX</p>    <p class="price">Price: Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.1</p>
+                        </td>
+                        <td>  <p>FINOLEX</p>  <p class="price">Price: Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.2</p>
+                        </td>
+                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.3</p>
+                        </td>
+                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.4</p>
+                        </td>
+                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="wwire.png" alt="Other Product 1">
+                            <p>WINDING 1.5</p>
+                        </td>
+                        <td> <p>FINOLEX</p>   <p class="price">  Price : Rs 00/-</p></td>
+                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
+
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="wood" class="services hidden">
+        <h2>OTHERS PRODUCTS</h2>
+        <div class="scrollable-table">
+            <table class="wires">
+                <thead>
+                    <tr>
+                        <th> _____</th>
+                        <th>PRICE</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr><td>
+                            <img class="service-image" src="tape.png" alt="Other Product 1">
+                            <p>TAPE</p>
+                        </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
+                      </tr>
+                      <tr><td>
+                                                        <img class="service-image" src="rubber.png" alt="Other Product 1">
+                                                        <p>RUBBER</p>
+                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+
+                                            <tr><td>
+                                                        <img class="service-image" src="shalac.png" alt="Other Product 1">
+                                                        <p>SHALAC</p>
+                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+                                            <tr><td>
+                                                        <img class="service-image" src="declom.png" alt="Other Product 1">
+                                                        <p>Dec Tape</p>
+                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+                                            <tr><td>
+                                                        <img class="service-image" src="blade.jpg" alt="Other Product 1">
+                                                        <p>BLADE</p>
+                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+                                            <tr><td>
+                                                        <img class="service-image" src="sdrive.png" alt="Other Product 1">
+                                                        <p>SCREW DRIVER</p>
+                                                </td><td>  <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+                                            <tr><td>
+                                                        <img class="service-image" src="cblade.png" alt="Other Product 1">
+                                                        <p>CUTTING BLADE</p>
+                                                </td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
+                                            </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="concrete" class="services hidden">
+        <h2> MOTOR SPARES AND STARTERS</h2>
+        <div class="scrollable-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>______</th>
+                        <th>TYPE 1</th>
+                        <th>TYPE 2</th>
+                        <th>TYPE 3</th>
+                        <th>TYPE 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                        <td>
+                            <img class="service-image" src="auto.png" alt="Concrete Type 1">
+                            <p>AUTOMATIC</p>
                         </td>
                         <td>
-                            <img class="service-image" src="other2.jpg" alt="Other Product 2">
-                            <p>Other Product B</p>
-                            <p class="price">Price: $30</p>
+                            <p>METAL 3 MONTHS </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
                         </td>
                         <td>
-                            <img class="service-image" src="other3.jpg" alt="Other Product 3">
-                            <p>Other Product C</p>
-                            <p class="price">Price: $35</p>
+                            <p>METAL 6 MONTHS </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
                         </td>
                         <td>
-                            <img class="service-image" src="other4.jpg" alt="Other Product 4">
-                            <p>Other Product D</p>
-                            <p class="price">Price: $40</p>
+                            <p>PLASTIC 3 MONTHS </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
                         </td>
                         <td>
-                            <img class="service-image" src="other5.jpg" alt="Other Product 5">
-                            <p>Other Product E</p>
-                            <p class="price">Price: $45</p>
+                            <p>PLASTIC 6 MONTHS </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <img class="service-image" src="fuse.png" alt="Concrete Type 1">
+                            <p>FUSES</p>
                         </td>
                         <td>
-                            <img class="service-image" src="other6.jpg" alt="Other Product 6">
-                            <p>Other Product F</p>
-                            <p class="price">Price: $50</p>
+                            <p>ANCHOR 63 A </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>ANCHOR 100 A </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>RAMA 63 A </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>RAMA 63 A </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <img class="service-image" src="starter.png" alt="Concrete Type 1">
+                            <p>STARTER</p>
+                        </td>
+                        <td>
+                            <p> MEX 10 HP </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>MEX 15 HP </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>MEX 20 HP</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>MEX 25 HP</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                         </tr>
+
+                        <tr>
+                        <td>
+                            <img class="service-image" src="oil.png" alt="Concrete Type 1">
+                            <p>STARTER OIL</p>
+                        </td>
+                        <td>
+                            <p> 1 Liter (FIRST Class) </p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>1 Liter (LOCAL Class)</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>4.5 Liter (FIRST Class)</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                            <p>4.5 Liter (LOCAL Class)</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                         </tr>
+                        <tr>
+                        <td>
+                            <img class="service-image" src="startbox.png" alt="Concrete Type 1">
+                            <p>STARTER BOX</p>
+                        </td>
+                        <td>
+                            <p>LIGHT  WEIGHT</p>
+                            <p >Price</p><p class="price"> Rs 00/-</p>
+                        </td>
+                        <td>
+                             <p>LIGHT  WEIGHT</p>
+                            <p class="price">Price:    Rs.48</p>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                         </tr>
+
+
+
+
                 </tbody>
             </table>
         </div>
@@ -309,13 +1009,32 @@
 </footer>
 
 <script>
-    function showTable(tableId) {
-        const tables = document.querySelectorAll('.services');
-        tables.forEach(table => {
-            table.classList.add('hidden'); // Hide all tables
-        });
-        document.getElementById(tableId).classList.remove('hidden'); // Show the selected table
+    let currentImageIndex = 0;
+    const totalImages = 9; // Total images from 0.png to 8.png
+    const imageElement = document.getElementById('dynamicImage');
+
+    function changeImage() {
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+        imageElement.src = currentImageIndex + '.png';
     }
+
+    setInterval(changeImage, 3000); // Change image every 3 seconds
+
+    function showTable(type) {
+        document.getElementById('pvc').classList.add('hidden');
+        document.getElementById('iron').classList.add('hidden');
+        document.getElementById('other').classList.add('hidden');
+        document.getElementById('wood').classList.add('hidden');
+        document.getElementById('concrete').classList.add('hidden'); // Hide other products
+
+        if (type) {
+            document.getElementById(type).classList.remove('hidden');
+        }
+    }
+
+    window.onload = function() {
+        showTable('pvc'); // Show PVC materials by default
+    };
 </script>
 
 </body>
