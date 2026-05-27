@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chandra Motor Works offers top-notch motor services with a focus on quality and farmer satisfaction." />
+  <meta name="theme-color" content="#2b2b2b" />
+  <title>Chandra Motor Works</title>
+
+  <style>
+    :root {
+      --bg: #2f2f2f;
+      --bg-2: #1f1f1f;
+      --card: rgba(0, 0, 0, 0.72);
+      --muted: #cfcfcf;
+      --text: #ffffff;
+      --accent: #4f8cff;
+      --accent-2: #00a86b;
+      --danger: #c0392b;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(79,140,255,0.12), transparent 28%),
+        linear-gradient(180deg, #393939 0%, #252525 100%);
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 16px 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.42), rgba(0,0,0,0.18));
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: 0.4px;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+    }
+
+    .under-dev {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      border: 1px dashed rgba(255,255,255,0.28);
+      border-radius: 999px;
+      font-size: 14px;
+      color: #f0f0f0;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .dynamic-image {
+      width: min(100%, 1180px);
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .content {
+      width: min(96%, 1400px);
+      margin: 0 auto;
+      padding: 18px 0 40px;
+    }
+
+    .hero-strip {
+      background: rgba(0,0,0,0.22);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      margin: 18px 0 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px;
+      margin-bottom: 20px;
+    }
+
+    .toolbar-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .admin-input {
+      min-width: 220px;
+      max-width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      font-size: 15px;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      transition: transform .15s ease, opacity .15s ease, background .15s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      user-select: none;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); opacity: .92; }
+
+    .btn-primary { background: linear-gradient(135deg, #2f7cff, #5a9bff); }
+    .btn-success { background: linear-gradient(135deg, #00a86b, #15c27e); }
+    .btn-danger { background: linear-gradient(135deg, #b33939, #dc5b5b); }
+    .btn-dark { background: linear-gradient(135deg, #444, #222); }
+
+    .status {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 4px 2px 14px;
+      margin-bottom: 6px;
+      scrollbar-width: thin;
+    }
+
+    .section-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid var(--border);
+      transition: background .2s ease, transform .15s ease;
+      flex: 0 0 auto;
+    }
+
+    .section-btn:hover { background: rgba(255,255,255,0.09); transform: translateY(-1px); }
+    .section-btn.active { background: linear-gradient(135deg, #4f8cff, #6ea6ff); }
+
+    .services {
+      display: none;
+      background: var(--card);
+      padding: 18px;
+      border-radius: var(--radius);
+      margin: 18px 0 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .services.active { display: block; }
+
+    .services h2 {
+      margin: 0 0 12px;
+      text-align: left;
+      font-size: 24px;
+    }
+
+    .scrollable-table {
+      overflow-x: auto;
+      overflow-y: auto;
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1100px;
+      table-layout: fixed;
+    }
+
+    .pvc { min-width: 1360px; }
+    .iron { min-width: 760px; }
+    .wires { min-width: 420px; }
+    .motor { min-width: 760px; }
+    .other { min-width: 420px; }
+
+    th, td {
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 14px 10px;
+      text-align: center;
+      vertical-align: middle;
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      word-wrap: break-word;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(180deg, #666, #4b4b4b);
+      font-size: 14px;
+    }
+
+    td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 5;
+      background: linear-gradient(180deg, #1a1a2e, #202040);
+      min-width: 200px;
+    }
+
+    .product-cell {
+      background: linear-gradient(180deg, #1a1a2e, #202040);
+    }
+
+    .product-box {
+      display: grid;
+      gap: 8px;
+      place-items: center;
+    }
+
+    .service-image {
+      width: 100%;
+      max-width: 110px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .label-small {
+      font-size: 12px;
+      color: #f4f4f4;
+      opacity: 0.85;
+      letter-spacing: 0.3px;
+    }
+
+    .price-input {
+      width: min(140px, 100%);
+      padding: 10px 12px;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 700;
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      outline: 2px solid transparent;
+      transition: outline .2s ease, box-shadow .2s ease, transform .15s ease;
+    }
+
+    .price-input:focus {
+      outline: 2px solid rgba(79,140,255,0.6);
+      box-shadow: 0 0 0 4px rgba(79,140,255,0.15);
+    }
+
+    .price-input[readonly] {
+      background: rgba(245,245,245,0.9);
+      cursor: default;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #d7d7d7;
+      opacity: 0.88;
+      text-align: center;
+    }
+
+    .top-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #e0e0e0;
+      opacity: 0.9;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px 12px 30px;
+      color: #d2d2d2;
+      background: rgba(0,0,0,0.28);
+      border-top: 1px solid var(--border);
+    }
+
+    .hide { display: none !important; }
+
+    @media (max-width: 768px) {
+      header { padding-top: 18px; }
+      .content { width: 96%; }
+      .services { padding: 14px; }
+      .services h2 { font-size: 20px; }
+      th, td { padding: 10px 8px; font-size: 13px; }
+      .price-input { width: 100px; padding: 9px 10px; }
+      .admin-input { width: 100%; min-width: 0; }
+      .btn, .section-btn { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chandra Motor Works</h1>
+    <div class="under-dev">( !UNDER DEVELOPMENT )</div>
+    <div>
+      <img id="dynamicImage" class="dynamic-image" src="0.png" alt="Chandra Motor Works Dynamic Image" />
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="hero-strip">
+      Prices are loaded from Supabase and can be edited only after unlocking with the admin password.
+    </div>
+
+    <section class="toolbar" aria-label="Admin controls">
+      <div class="toolbar-row">
+        <input id="adminPassword" class="admin-input" type="password" placeholder="Enter admin password" autocomplete="current-password" />
+        <button class="btn btn-primary" id="unlockBtn" type="button">Unlock Editing</button>
+        <button class="btn btn-dark" id="lockBtn" type="button">Lock</button>
+      </div>
+      <div class="status" id="statusText">Viewing mode enabled</div>
+      <div class="hint">Admin password in this file is frontend-only. For real security, add Supabase Auth later.</div>
+    </section>
+
+    <section class="button-container" id="sectionButtons">
+      <button class="section-btn active" type="button" data-target="pvc">PVC FITTINGS</button>
+      <button class="section-btn" type="button" data-target="iron">IRON FITTINGS</button>
+      <button class="section-btn" type="button" data-target="wires">WIRES AND CABLES</button>
+      <button class="section-btn" type="button" data-target="motor">MOTORS & STARTERS</button>
+      <button class="section-btn" type="button" data-target="other">OTHER PRODUCTS</button>
+    </section>
+
+    <section id="pvc" class="services active">
+      <h2>PVC MATERIALS</h2>
+      <div class="scrollable-table">
+        <table class="pvc">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>2"</th>
+              <th>2 1/2"</th>
+              <th>3"</th>
+              <th>4"</th>
+              <th>5"</th>
+              <th>2" x 2 1/2"</th>
+              <th>2" x 3"</th>
+              <th>2" x 4"</th>
+              <th>2 1/2" x 3"</th>
+              <th>2 1/2" x 4"</th>
+              <th>3" x 4"</th>
+            </tr>
+          </thead>
+          <tbody id="pvcBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="iron" class="services">
+      <h2>IRON FITTINGS</h2>
+      <div class="scrollable-table">
+        <table class="iron">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>PRICE</th>
+              <th>PRICE</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody id="ironBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="wires" class="services">
+      <h2>WIRES AND CABLES</h2>
+      <div class="scrollable-table">
+        <table class="wires">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>PRICE</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody id="wiresBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="motor" class="services">
+      <h2>MOTORS & STARTERS</h2>
+      <div class="scrollable-table">
+        <table class="motor">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>PRICE</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody id="motorBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="other" class="services">
+      <h2>OTHER PRODUCTS</h2>
+      <div class="scrollable-table">
+        <table class="other">
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody id="otherBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="top-note">
+      All prices are synced through Supabase table: <strong>prices</strong> with columns <strong>id</strong> and <strong>value</strong>.
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Chandra Motor Works
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // =========================
+    // CONFIG
+    // =========================
+    const SUPABASE_URL = 'https://wkldbnkystsqroofvaba.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_Con6nSBq4lFs1A2K6jAP4w_o2fY81K2';
+    const ADMIN_PASSWORD = 'GT07';
+
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // =========================
+    // DATA MODEL
+    // Add as many rows as you want here.
+    // Each input gets a unique data-id that maps to Supabase.
+    // =========================
+    const catalog = {
+      pvc: [
+        {
+          rowId: 'cpl_pn4',
+          name: 'COUPLING PN4',
+          img: 'c4.png',
+          cells: [
+            { id: 'cpl_pn4_2', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_3', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_4', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2x2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2_5x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_2_5x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn4_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'cpl_pn6',
+          name: 'COUPLING PN6',
+          img: 'c6.png',
+          cells: [
+            { id: 'cpl_pn6_2', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_3', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_4', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2x2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2_5x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_2_5x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn6_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'cpl_pn10',
+          name: 'COUPLING PN10',
+          img: 'c10.png',
+          cells: [
+            { id: 'cpl_pn10_2', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_3', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_4', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2x2_5', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2_5x3', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_2_5x4', value: 'Rs 00/-' },
+            { id: 'cpl_pn10_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'elb_pn4',
+          name: 'ELBOW PN4',
+          img: 'el4.png',
+          cells: [
+            { id: 'elb_pn4_2', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn4_3', value: 'Rs 00/-' },
+            { id: 'elb_pn4_4', value: 'Rs 00/-' },
+            { id: 'elb_pn4_5', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2x2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2x3', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2x4', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2_5x3', value: 'Rs 00/-' },
+            { id: 'elb_pn4_2_5x4', value: 'Rs 00/-' },
+            { id: 'elb_pn4_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'elb_pn6',
+          name: 'ELBOW PN6',
+          img: 'el6.png',
+          cells: [
+            { id: 'elb_pn6_2', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn6_3', value: 'Rs 00/-' },
+            { id: 'elb_pn6_4', value: 'Rs 00/-' },
+            { id: 'elb_pn6_5', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2x2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2x3', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2x4', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2_5x3', value: 'Rs 00/-' },
+            { id: 'elb_pn6_2_5x4', value: 'Rs 00/-' },
+            { id: 'elb_pn6_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'elb_pn10',
+          name: 'ELBOW PN10',
+          img: 'el10.png',
+          cells: [
+            { id: 'elb_pn10_2', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn10_3', value: 'Rs 00/-' },
+            { id: 'elb_pn10_4', value: 'Rs 00/-' },
+            { id: 'elb_pn10_5', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2x2_5', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2x3', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2x4', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2_5x3', value: 'Rs 00/-' },
+            { id: 'elb_pn10_2_5x4', value: 'Rs 00/-' },
+            { id: 'elb_pn10_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'elb_thr',
+          name: 'ELBOW THREAD',
+          img: 'elt.png',
+          cells: [
+            { id: 'elb_thr_2', value: 'Rs 00/-' },
+            { id: 'elb_thr_2_5', value: 'Rs 00/-' },
+            { id: 'elb_thr_3', value: 'Rs 00/-' },
+            { id: 'elb_thr_4', value: 'Rs 00/-' },
+            { id: 'elb_thr_5', value: 'Rs 00/-' },
+            { id: 'elb_thr_2x2_5', value: 'Rs 00/-' },
+            { id: 'elb_thr_2x3', value: 'Rs 00/-' },
+            { id: 'elb_thr_2x4', value: 'Rs 00/-' },
+            { id: 'elb_thr_2_5x3', value: 'Rs 00/-' },
+            { id: 'elb_thr_2_5x4', value: 'Rs 00/-' },
+            { id: 'elb_thr_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'elb_45',
+          name: '45\' ELBOW',
+          img: 'el45.png',
+          cells: [
+            { id: 'elb_45_2', value: 'Rs 00/-' },
+            { id: 'elb_45_2_5', value: 'Rs 00/-' },
+            { id: 'elb_45_3', value: 'Rs 00/-' },
+            { id: 'elb_45_4', value: 'Rs 00/-' },
+            { id: 'elb_45_5', value: 'Rs 00/-' },
+            { id: 'elb_45_2x2_5', value: 'Rs 00/-' },
+            { id: 'elb_45_2x3', value: 'Rs 00/-' },
+            { id: 'elb_45_2x4', value: 'Rs 00/-' },
+            { id: 'elb_45_2_5x3', value: 'Rs 00/-' },
+            { id: 'elb_45_2_5x4', value: 'Rs 00/-' },
+            { id: 'elb_45_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'long_bend',
+          name: 'LONG BEND',
+          img: 'lb.png',
+          cells: [
+            { id: 'long_bend_2', value: 'Rs 00/-' },
+            { id: 'long_bend_2_5', value: 'Rs 00/-' },
+            { id: 'long_bend_3', value: 'Rs 00/-' },
+            { id: 'long_bend_4', value: 'Rs 00/-' },
+            { id: 'long_bend_5', value: 'Rs 00/-' },
+            { id: 'long_bend_2x2_5', value: 'Rs 00/-' },
+            { id: 'long_bend_2x3', value: 'Rs 00/-' },
+            { id: 'long_bend_2x4', value: 'Rs 00/-' },
+            { id: 'long_bend_2_5x3', value: 'Rs 00/-' },
+            { id: 'long_bend_2_5x4', value: 'Rs 00/-' },
+            { id: 'long_bend_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'tee_pn4',
+          name: 'TEE PN4',
+          img: 't4.png',
+          cells: [
+            { id: 'tee_pn4_2', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn4_3', value: 'Rs 00/-' },
+            { id: 'tee_pn4_4', value: 'Rs 00/-' },
+            { id: 'tee_pn4_5', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2x2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2x3', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2x4', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2_5x3', value: 'Rs 00/-' },
+            { id: 'tee_pn4_2_5x4', value: 'Rs 00/-' },
+            { id: 'tee_pn4_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'tee_pn6',
+          name: 'TEE PN6',
+          img: 't6.png',
+          cells: [
+            { id: 'tee_pn6_2', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn6_3', value: 'Rs 00/-' },
+            { id: 'tee_pn6_4', value: 'Rs 00/-' },
+            { id: 'tee_pn6_5', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2x2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2x3', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2x4', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2_5x3', value: 'Rs 00/-' },
+            { id: 'tee_pn6_2_5x4', value: 'Rs 00/-' },
+            { id: 'tee_pn6_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'tee_pn10',
+          name: 'TEE PN10',
+          img: 't10.png',
+          cells: [
+            { id: 'tee_pn10_2', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn10_3', value: 'Rs 00/-' },
+            { id: 'tee_pn10_4', value: 'Rs 00/-' },
+            { id: 'tee_pn10_5', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2x2_5', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2x3', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2x4', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2_5x3', value: 'Rs 00/-' },
+            { id: 'tee_pn10_2_5x4', value: 'Rs 00/-' },
+            { id: 'tee_pn10_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'door_tee',
+          name: 'DOOR TEE',
+          img: 'dt.png',
+          cells: [
+            { id: 'door_tee_2', value: 'Rs 00/-' },
+            { id: 'door_tee_2_5', value: 'Rs 00/-' },
+            { id: 'door_tee_3', value: 'Rs 00/-' },
+            { id: 'door_tee_4', value: 'Rs 00/-' },
+            { id: 'door_tee_5', value: 'Rs 00/-' },
+            { id: 'door_tee_2x2_5', value: 'Rs 00/-' },
+            { id: 'door_tee_2x3', value: 'Rs 00/-' },
+            { id: 'door_tee_2x4', value: 'Rs 00/-' },
+            { id: 'door_tee_2_5x3', value: 'Rs 00/-' },
+            { id: 'door_tee_2_5x4', value: 'Rs 00/-' },
+            { id: 'door_tee_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'door_elbow',
+          name: 'DOOR ELBOW',
+          img: 'dl.png',
+          cells: [
+            { id: 'door_elbow_2', value: 'Rs 00/-' },
+            { id: 'door_elbow_2_5', value: 'Rs 00/-' },
+            { id: 'door_elbow_3', value: 'Rs 00/-' },
+            { id: 'door_elbow_4', value: 'Rs 00/-' },
+            { id: 'door_elbow_5', value: 'Rs 00/-' },
+            { id: 'door_elbow_2x2_5', value: 'Rs 00/-' },
+            { id: 'door_elbow_2x3', value: 'Rs 00/-' },
+            { id: 'door_elbow_2x4', value: 'Rs 00/-' },
+            { id: 'door_elbow_2_5x3', value: 'Rs 00/-' },
+            { id: 'door_elbow_2_5x4', value: 'Rs 00/-' },
+            { id: 'door_elbow_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'mta',
+          name: 'MTA',
+          img: 'mta.png',
+          cells: [
+            { id: 'mta_2', value: 'Rs 00/-' },
+            { id: 'mta_2_5', value: 'Rs 00/-' },
+            { id: 'mta_3', value: 'Rs 00/-' },
+            { id: 'mta_4', value: 'Rs 00/-' },
+            { id: 'mta_5', value: 'Rs 00/-' },
+            { id: 'mta_2x2_5', value: 'Rs 00/-' },
+            { id: 'mta_2x3', value: 'Rs 00/-' },
+            { id: 'mta_2x4', value: 'Rs 00/-' },
+            { id: 'mta_2_5x3', value: 'Rs 00/-' },
+            { id: 'mta_2_5x4', value: 'Rs 00/-' },
+            { id: 'mta_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'rmta',
+          name: 'R MTA',
+          img: 'rmta.png',
+          cells: [
+            { id: 'rmta_2', value: 'Rs 00/-' },
+            { id: 'rmta_2_5', value: 'Rs 00/-' },
+            { id: 'rmta_3', value: 'Rs 00/-' },
+            { id: 'rmta_4', value: 'Rs 00/-' },
+            { id: 'rmta_5', value: 'Rs 00/-' },
+            { id: 'rmta_2x2_5', value: 'Rs 00/-' },
+            { id: 'rmta_2x3', value: 'Rs 00/-' },
+            { id: 'rmta_2x4', value: 'Rs 00/-' },
+            { id: 'rmta_2_5x3', value: 'Rs 00/-' },
+            { id: 'rmta_2_5x4', value: 'Rs 00/-' },
+            { id: 'rmta_3x4', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'fta',
+          name: 'FTA',
+          img: 'fta.png',
+          cells: [
+            { id: 'fta_2', value: 'Rs 00/-' },
+            { id: 'fta_2_5', value: 'Rs 00/-' },
+            { id: 'fta_3', value: 'Rs 00/-' },
+            { id: 'fta_4', value: 'Rs 00/-' },
+            { id: 'fta_5', value: 'Rs 00/-' },
+            { id: 'fta_2x2_5', value: 'Rs 00/-' },
+            { id: 'fta_2x3', value: 'Rs 00/-' },
+            { id: 'fta_2x4', value: 'Rs 00/-' },
+            { id: 'fta_2_5x3', value: 'Rs 00/-' },
+            { id: 'fta_2_5x4', value: 'Rs 00/-' },
+            { id: 'fta_3x4', value: 'Rs 00/-' }
+          ]
+        }
+      ],
+      iron: [
+        {
+          rowId: 'iron_sample_1',
+          name: 'IRON COUPLING',
+          img: 'iron1.png',
+          cells: [
+            { id: 'iron_coupling_1', value: 'Rs 00/-' },
+            { id: 'iron_coupling_2', value: 'Rs 00/-' },
+            { id: 'iron_coupling_3', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'iron_sample_2',
+          name: 'IRON ELBOW',
+          img: 'iron2.png',
+          cells: [
+            { id: 'iron_elbow_1', value: 'Rs 00/-' },
+            { id: 'iron_elbow_2', value: 'Rs 00/-' },
+            { id: 'iron_elbow_3', value: 'Rs 00/-' }
+          ]
+        }
+      ],
+      wires: [
+        {
+          rowId: 'wire_sample_1',
+          name: 'WIRE 1 SQMM',
+          img: 'wire1.png',
+          cells: [
+            { id: 'wire_1sqmm_1', value: 'Rs 00/-' },
+            { id: 'wire_1sqmm_2', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'wire_sample_2',
+          name: 'WIRE 1.5 SQMM',
+          img: 'wire2.png',
+          cells: [
+            { id: 'wire_1_5sqmm_1', value: 'Rs 00/-' },
+            { id: 'wire_1_5sqmm_2', value: 'Rs 00/-' }
+          ]
+        }
+      ],
+      motor: [
+        {
+          rowId: 'motor_1hp',
+          name: '1 HP SUBMERSIBLE',
+          img: 'motor1.png',
+          cells: [
+            { id: 'motor_1hp_price', value: 'Rs 00/-' },
+            { id: 'motor_1hp_starter', value: 'Rs 00/-' }
+          ]
+        },
+        {
+          rowId: 'motor_2hp',
+          name: '2 HP SUBMERSIBLE',
+          img: 'motor2.png',
+          cells: [
+            { id: 'motor_2hp_price', value: 'Rs 00/-' },
+            { id: 'motor_2hp_starter', value: 'Rs 00/-' }
+          ]
+        }
+      ],
+      other: [
+        {
+          rowId: 'other_1',
+          name: 'OTHER PRODUCT 1',
+          img: 'other1.png',
+          cells: [
+            { id: 'other_product_1', value: 'Rs 00/-' }
+          ]
+        }
+      ]
+    };
+
+    // =========================
+    // HELPERS
+    // =========================
+    let editingEnabled = false;
+    const knownIds = new Set();
+
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function setStatus(message) {
+      document.getElementById('statusText').textContent = message;
+    }
+
+    function setSectionActive(target) {
+      document.querySelectorAll('.services').forEach(section => section.classList.remove('active'));
+      document.querySelectorAll('.section-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      document.querySelector(`.section-btn[data-target="${target}"]`).classList.add('active');
+    }
+
+    function renderPriceInput(cell) {
+      knownIds.add(cell.id);
+      return `<input type="text" class="price-input" data-id="${escapeHtml(cell.id)}" value="${escapeHtml(cell.value)}" readonly />`;
+    }
+
+    function renderRows(rows, colsCount, withImage = true) {
+      return rows.map(row => {
+        const productCell = `
+          <td class="product-cell">
+            <div class="product-box">
+              ${withImage ? `<img class="service-image" src="${escapeHtml(row.img)}" alt="${escapeHtml(row.name)}" onerror="this.style.display='none'">` : ''}
+              <div>
+                <div style="font-weight:700">${escapeHtml(row.name)}</div>
+                <div class="label-small">ID: ${escapeHtml(row.rowId)}</div>
+              </div>
+            </div>
+          </td>`;
+
+        const cellsHtml = row.cells.map(renderPriceInput).join('');
+        const missing = Math.max(0, colsCount - row.cells.length);
+        const filler = Array.from({ length: missing }, () => `<td><input type="text" class="price-input" data-id="${escapeHtml(row.rowId)}_${Math.random().toString(36).slice(2, 8)}" value="Rs 00/-" readonly /></td>`).join('');
+        return `<tr>${productCell}${cellsHtml}${filler}</tr>`;
+      }).join('');
+    }
+
+    function seedTables() {
+      document.getElementById('pvcBody').innerHTML = renderRows(catalog.pvc, 11, true);
+      document.getElementById('ironBody').innerHTML = renderRows(catalog.iron, 3, true);
+      document.getElementById('wiresBody').innerHTML = renderRows(catalog.wires, 2, true);
+      document.getElementById('motorBody').innerHTML = renderRows(catalog.motor, 2, true);
+      document.getElementById('otherBody').innerHTML = renderRows(catalog.other, 1, true);
+    }
+
+    function getAllInputs() {
+      return Array.from(document.querySelectorAll('.price-input'));
+    }
+
+    function setInputsEditable(enabled) {
+      getAllInputs().forEach(input => {
+        input.readOnly = !enabled;
+        input.style.cursor = enabled ? 'text' : 'default';
+      });
+    }
+
+    async function upsertPrice(id, value) {
+      const { error } = await supabaseClient.from('prices').upsert({ id, value }, { onConflict: 'id' });
+      if (error) console.error('Supabase upsert error:', id, error);
+    }
+
+    async function loadPrices() {
+      const { data, error } = await supabaseClient.from('prices').select('id,value');
+      if (error) {
+        console.error('Supabase load error:', error);
+        setStatus('Could not load prices from Supabase. Check table, RLS, and keys.');
+        return;
+      }
+
+      const map = new Map((data || []).map(row => [row.id, row.value]));
+      getAllInputs().forEach(input => {
+        const saved = map.get(input.dataset.id);
+        if (typeof saved === 'string' && saved.length) input.value = saved;
+      });
+      setStatus(editingEnabled ? 'Admin editing enabled' : 'Viewing mode enabled');
+    }
+
+    async function seedMissingPricesIfAny() {
+      const { data, error } = await supabaseClient.from('prices').select('id');
+      if (error) {
+        console.error('Seed check error:', error);
+        return;
+      }
+
+      const existing = new Set((data || []).map(x => x.id));
+      const toInsert = [];
+      getAllInputs().forEach(input => {
+        if (!existing.has(input.dataset.id)) {
+          toInsert.push({ id: input.dataset.id, value: input.value });
+        }
+      });
+
+      if (toInsert.length) {
+        const { error: insertError } = await supabaseClient.from('prices').upsert(toInsert, { onConflict: 'id' });
+        if (insertError) console.error('Seed insert error:', insertError);
+      }
+    }
+
+    function attachEvents() {
+      document.getElementById('sectionButtons').addEventListener('click', (e) => {
+        const btn = e.target.closest('.section-btn');
+        if (!btn) return;
+        setSectionActive(btn.dataset.target);
+      });
+
+      document.getElementById('unlockBtn').addEventListener('click', () => {
+        const entered = document.getElementById('adminPassword').value.trim();
+        if (entered !== ADMIN_PASSWORD) {
+          alert('Wrong Password');
+          return;
+        }
+        editingEnabled = true;
+        setInputsEditable(true);
+        setStatus('Admin editing enabled. Tap a price field and update it.');
+      });
+
+      document.getElementById('lockBtn').addEventListener('click', () => {
+        editingEnabled = false;
+        setInputsEditable(false);
+        setStatus('Viewing mode enabled');
+      });
+
+      document.addEventListener('input', async (e) => {
+        const input = e.target.closest('.price-input');
+        if (!input) return;
+        if (!editingEnabled) return;
+        await upsertPrice(input.dataset.id, input.value.trim());
+      }, true);
+
+      document.addEventListener('change', async (e) => {
+        const input = e.target.closest('.price-input');
+        if (!input) return;
+        if (!editingEnabled) return;
+        await upsertPrice(input.dataset.id, input.value.trim());
+      }, true);
+    }
+
+    async function init() {
+      seedTables();
+      attachEvents();
+      setInputsEditable(false);
+      setSectionActive('pvc');
+      await seedMissingPricesIfAny();
+      await loadPrices();
+    }
+
+    init();
+  </script>
+</body>
+</html>
