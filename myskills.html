@@ -1279,15 +1279,22 @@
     }
 
     async function upsertPriceRow(payload) {
-        if (!supabaseClient) return;
-        const { error } = await supabaseClient.from(TABLE_NAME).upsert(payload, { onConflict: 'id' });
-        if (error) {
-            console.error('Supabase save error:', error);
-            setStatus('Save failed. Check Supabase table, RLS, and policies.');
-            return false;
-        }
-        return true;
+
+    const { data, error } = await supabaseClient
+        .from('prices')
+        .upsert(payload, {
+            onConflict: 'id'
+        });
+
+    if (error) {
+        console.error(error);
+        alert(JSON.stringify(error));
+        return false;
     }
+
+    console.log("Saved:", data);
+    return true;
+}
 
     async function loadPricesFromSupabase() {
         if (!supabaseClient) return;
