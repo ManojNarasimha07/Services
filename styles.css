@@ -1,426 +1,207 @@
-/* =========================================
-   CHANDRA MOTOR WORKS
-   PROFESSIONAL STYLESHEET
-========================================= */
 
-:root {
-
-    --bg: #0f172a;
-    --bg-secondary: #111827;
-    --card: #1e293b;
-    --text: #f8fafc;
-    --text-light: #cbd5e1;
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --border: rgba(255,255,255,0.08);
-    --table-header: #334155;
-    --table-cell: #f8fafc;
-    --table-text: #111827;
-    --shadow: 0 10px 25px rgba(0,0,0,0.25);
-
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --accent:#2563eb;
+  --border:rgba(255,255,255,.08);
+  --table:#f8fafc;
+  --tableText:#111827;
 }
 
-/* =========================================
-   LIGHT MODE
-========================================= */
-
-body.light-mode {
-
-    --bg: #f1f5f9;
-    --bg-secondary: #ffffff;
-    --card: #ffffff;
-    --text: #0f172a;
-    --text-light: #475569;
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --border: rgba(0,0,0,0.08);
-    --table-header: #dbeafe;
-    --table-cell: #ffffff;
-    --table-text: #111827;
-
+body.light-mode{
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#2563eb;
+  --border:rgba(0,0,0,.08);
+  --table:#ffffff;
+  --tableText:#111827;
 }
 
-/* =========================================
-   GLOBAL
-========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#020617,var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-body {
-
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, var(--bg), var(--bg-secondary));
-    color: var(--text);
-    min-height: 100vh;
-    transition: 0.3s ease;
-    overflow-x: hidden;
-
+header{
+  padding:30px 20px;
+  text-align:center;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
-header {
-
-    padding: 30px 20px;
-    text-align: center;
-
+header h1{
+  font-size:3rem;
+  margin-bottom:20px;
 }
 
-header h1 {
-
-    font-size: 3rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-
+.dynamic-image{
+  width:100%;
+  max-height:520px;
+  object-fit:contain !important;
+  background:#0b1120;
+  padding:10px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-/* =========================================
-   DYNAMIC IMAGE
-========================================= */
-
-.dynamic-image {
-
-    width: 100%;
-    max-height: 520px;
-    object-fit: contain;
-    background: #111;
-    padding: 10px;
-    border-radius: 20px;
-    display: block;
-    box-shadow: var(--shadow);
-
+.content{
+  width:95%;
+  margin:auto;
+  padding-bottom:50px;
 }
 
-/* =========================================
-   MAIN CONTENT
-========================================= */
-
-.content {
-
-    width: 95%;
-    margin: auto;
-    padding-bottom: 60px;
-
+.button-container{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  margin:25px 0;
+  padding-bottom:10px;
 }
 
-.content h1 {
-
-    text-align: center;
-    margin: 30px 0 10px;
-    font-size: 2.5rem;
-
+button{
+  border:none;
+  background:var(--accent);
+  color:white;
+  padding:14px 22px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:bold;
+  transition:.25s ease;
+  white-space:nowrap;
 }
 
-.content h2 {
-
-    text-align: center;
-    margin-bottom: 20px;
-    color: var(--text-light);
-
+button:hover{
+  transform:translateY(-2px);
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
-
-.button-container {
-
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 10px 0 20px;
-
+.services{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:22px;
+  margin-top:25px;
+  backdrop-filter:blur(8px);
 }
 
-.button-container::-webkit-scrollbar {
-    height: 6px;
+.scrollable-table{
+  overflow-x:auto;
+  border-radius:18px;
 }
 
-.button-container::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
+table{
+  border-collapse:collapse;
+  width:100%;
 }
 
-button {
-
-    border: none;
-    background: var(--primary);
-    color: white;
-    padding: 14px 24px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.25s ease;
-    white-space: nowrap;
-    box-shadow: var(--shadow);
-
+th{
+  background:#334155;
+  color:white;
+  padding:16px;
+  position:sticky;
+  top:0;
+  z-index:5;
 }
 
-button:hover {
-
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-
+td{
+  background:var(--table);
+  color:var(--tableText);
+  padding:16px;
+  text-align:center;
+  border:1px solid rgba(0,0,0,.08);
+  vertical-align:top;
 }
 
-/* =========================================
-   THEME TOGGLE
-========================================= */
-
-.theme-toggle {
-
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
-    padding: 12px 18px;
-    border-radius: 50px;
-
+td:first-child{
+  position:sticky;
+  left:0;
+  z-index:4;
+  background:#dbeafe;
+  min-width:220px;
 }
 
-/* =========================================
-   SERVICES SECTION
-========================================= */
-
-.services {
-
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 24px;
-    margin-top: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
-
+.service-image{
+  width:100%;
+  height:180px !important;
+  object-fit:contain !important;
+  background:white;
+  padding:10px;
+  border-radius:12px;
+  display:block;
+  margin-bottom:10px;
 }
 
-.hidden {
-    display: none;
+.price{
+  color:#dc2626;
+  font-weight:bold;
+  font-size:18px;
 }
 
-/* =========================================
-   TABLE
-========================================= */
-
-.scrollable-table {
-
-    overflow-x: auto;
-    border-radius: 18px;
-
+.admin-panel{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin:20px 0;
 }
 
-table {
-
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px;
-
+.admin-input{
+  padding:14px;
+  border:none;
+  border-radius:12px;
 }
 
-th {
-
-    background: var(--table-header);
-    color: var(--text);
-    padding: 18px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    font-size: 15px;
-
+.admin-btn{
+  width:100%;
 }
 
-td {
-
-    background: var(--table-cell);
-    color: var(--table-text);
-    padding: 18px;
-    text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    vertical-align: top;
-
+.hidden{
+  display:none;
 }
 
-td:first-child {
-
-    position: sticky;
-    left: 0;
-    z-index: 5;
-    background: #dbeafe;
-    min-width: 220px;
-
+.theme-toggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:9999;
 }
 
-/* =========================================
-   PRODUCT IMAGES
-========================================= */
-
-.service-image {
-
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    background: rgba(255,255,255,0.96);
-    padding: 10px;
-    border-radius: 14px;
-    display: block;
-    margin-bottom: 10px;
-
+footer{
+  margin-top:40px;
+  padding:30px;
+  text-align:center;
 }
 
-/* =========================================
-   PRICE TAG
-========================================= */
+@media(max-width:768px){
 
-.price {
+  header h1{
+    font-size:2rem;
+  }
 
-    color: #dc2626;
-    font-weight: bold;
-    font-size: 18px;
+  .dynamic-image{
+    max-height:300px;
+  }
 
-}
+  .service-image{
+    height:120px !important;
+    padding:6px;
+  }
 
-/* =========================================
-   ADMIN PANEL
-========================================= */
+  th,td{
+    padding:10px;
+    font-size:13px;
+  }
 
-.admin-panel {
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
-
-}
-
-.admin-input {
-
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-
-}
-
-.admin-btn {
-
-    width: 100%;
-
-}
-
-.admin-status {
-
-    margin: 15px 0;
-    color: var(--text-light);
-    text-align: center;
-
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-    background: rgba(0,0,0,0.2);
-    color: var(--text-light);
-
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    header h1 {
-
-        font-size: 2rem;
-
-    }
-
-    .content h1 {
-
-        font-size: 2rem;
-
-    }
-
-    button {
-
-        font-size: 14px;
-        padding: 12px 18px;
-
-    }
-
-    th,
-    td {
-
-        padding: 12px;
-        font-size: 13px;
-
-    }
-
-    .service-image {
-
-        height: 120px;
-        padding: 6px;
-
-    }
-
-    .dynamic-image {
-
-        max-height: 300px;
-
-    }
-
-    td:first-child {
-
-        min-width: 170px;
-
-    }
-
-}
-
-/* =========================================
-   SCROLLBAR
-========================================= */
-
-::-webkit-scrollbar {
-
-    width: 8px;
-    height: 8px;
-
-}
-
-::-webkit-scrollbar-thumb {
-
-    background: var(--primary);
-    border-radius: 10px;
-
-}
-
-::-webkit-scrollbar-track {
-
-    background: transparent;
-
+  td:first-child{
+    min-width:170px;
+  }
 }
