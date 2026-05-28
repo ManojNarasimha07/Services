@@ -36,6 +36,45 @@
             margin: 20px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
+        .category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+    margin:25px 0;
+}
+
+.category-card{
+    border:none;
+    border-radius:22px;
+    padding:18px;
+    background:#fff;
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:.25s;
+}
+
+.category-card:hover{
+    transform:translateY(-5px);
+}
+
+.category-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.category-card span{
+    font-size:15px;
+    font-weight:700;
+}
         .scrollable-table {
             overflow-x: auto;
             max-height: 500px;
@@ -274,14 +313,34 @@
         <button id="lockEditingBtn" class="admin-btn danger" type="button">Lock</button>
     </div>
     <div id="adminStatus" class="admin-status">Viewing mode enabled. Prices are locked.</div>
-    <div class="button-container">
-        <button onclick="showTable('pvc')">PVC FIITINGS</button>
-        <button onclick="showTable('iron')">IRON FITTINGS</button>
-        <button onclick="showTable('other')">WIRES AND CABLES</button>
-        <button onclick="showTable('concrete')">MOTORS & STARTERS</button>
-        <button onclick="showTable('wood')">OTHER PRODUCTS</button>
+    <div class="category-grid">
 
-    </div>
+    <button class="category-card" onclick="showTable('pvc')">
+        <img src="c4.png" alt="">
+        <span>PVC FITTINGS</span>
+    </button>
+
+    <button class="category-card" onclick="showTable('iron')">
+        <img src="icu.png" alt="">
+        <span>IRON FITTINGS</span>
+    </button>
+
+    <button class="category-card" onclick="showTable('other')">
+        <img src="cable.png" alt="">
+        <span>WIRES & CABLES</span>
+    </button>
+
+    <button class="category-card" onclick="showTable('concrete')">
+        <img src="auto.png" alt="">
+        <span>MOTORS</span>
+    </button>
+
+    <button class="category-card" onclick="showTable('wood')">
+        <img src="tape.png" alt="">
+        <span>OTHER PRODUCTS</span>
+    </button>
+
+</div>
 
     <div id="pvc" class="services">
         <h2>PVC MATERIALS</h2>
