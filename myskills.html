@@ -5,6 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandra Motor Works</title>
 <link rel="stylesheet" href="styles.css">
+
+<style>
+:root{
+    --bg:#f3f7fb;
+    --card:#ffffff;
+    --card-2:#eef5ff;
+    --accent:#0f6bd8;
+    --accent-2:#2a92ff;
+    --text:#17324d;
+    --muted:#5c7287;
+    --line:rgba(23,50,77,.12);
+    --shadow:0 18px 45px rgba(15,107,216,.14);
+    --shadow-soft:0 10px 25px rgba(15,107,216,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(42,146,255,.15), transparent 30%),
+      radial-gradient(circle at top right, rgba(15,107,216,.10), transparent 28%),
+      linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+    color:var(--text);
+}
+button, input, textarea, select{font:inherit}
+#header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:24px 28px;
+    background:linear-gradient(135deg, #0d4f9e 0%, #0f6bd8 45%, #2a92ff 100%);
+    color:#fff;
+    box-shadow:var(--shadow);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+#header h1{
+    margin:0;
+    font-size:clamp(1.5rem, 3vw, 2.4rem);
+    letter-spacing:.4px;
+}
+.dynamic-image{
+    width:84px;
+    height:84px;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid rgba(255,255,255,.75);
+    box-shadow:0 12px 24px rgba(0,0,0,.18);
+    background:#fff;
+}
+.theme-toggle{
+    position:fixed;
+    right:18px;
+    top:18px;
+    z-index:200;
+    border:none;
+    border-radius:999px;
+    padding:12px 16px;
+    background:#0f6bd8;
+    color:#fff;
+    box-shadow:var(--shadow-soft);
+}
+.content{
+    max-width:1500px;
+    margin:0 auto;
+    padding:22px 18px 40px;
+}
+.content h1{
+    margin:8px 0 6px;
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+}
+.content h2{
+    margin:0 0 14px;
+    color:var(--muted);
+    font-weight:600;
+}
+.admin-panel{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    margin:18px 0 10px;
+    padding:16px;
+    border-radius:20px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(10px);
+    box-shadow:var(--shadow-soft);
+    border:1px solid rgba(255,255,255,.65);
+}
+.admin-input{
+    min-width:240px;
+    padding:12px 14px;
+    border-radius:14px;
+    border:1px solid var(--line);
+    outline:none;
+    background:#fff;
+}
+.admin-btn{
+    border:none;
+    border-radius:14px;
+    padding:12px 16px;
+    font-weight:700;
+}
+.admin-btn.primary{
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#fff;
+}
+.admin-btn.danger{
+    background:#e24d4d;
+    color:#fff;
+}
+.admin-status{
+    margin:8px 0 18px;
+    padding:12px 16px;
+    border-left:4px solid var(--accent);
+    border-radius:14px;
+    background:rgba(255,255,255,.85);
+    box-shadow:var(--shadow-soft);
+}
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:14px;
+    margin:18px 0 28px;
+}
+.category-card{
+    border:none;
+    cursor:pointer;
+    padding:14px 12px;
+    border-radius:22px;
+    background:linear-gradient(180deg, #ffffff 0%, #eef6ff 100%);
+    box-shadow:var(--shadow-soft);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:160px;
+    transition:transform .18s ease, box-shadow .18s ease;
+    text-align:center;
+}
+.category-card:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.category-card img{
+    width:72px;
+    height:72px;
+    object-fit:cover;
+    border-radius:18px;
+    border:2px solid rgba(15,107,216,.15);
+    background:#fff;
+}
+.category-card span{
+    color:var(--text);
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:.2px;
+}
+.services{
+    margin:28px 0 36px;
+    scroll-margin-top:110px;
+}
+.services h2{
+    color:var(--text);
+    margin-bottom:12px;
+}
+.scrollable-table{
+    max-height:72vh;
+    overflow:auto;
+    border-radius:22px;
+    border:1px solid rgba(23,50,77,.10);
+    background:rgba(255,255,255,.88);
+    box-shadow:var(--shadow);
+}
+table{
+    width:max-content;
+    min-width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    background:#fff;
+}
+th, td{
+    min-width:122px;
+    padding:12px 10px;
+    vertical-align:top;
+    border-right:1px solid rgba(23,50,77,.08);
+    border-bottom:1px solid rgba(23,50,77,.08);
+    background:#fff;
+}
+thead th{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:linear-gradient(135deg, #0f6bd8 0%, #2a92ff 100%);
+    color:#fff;
+    font-weight:800;
+    text-align:center;
+}
+thead th:first-child{
+    left:0;
+    z-index:7;
+    background:linear-gradient(135deg, #0d4f9e 0%, #0f6bd8 100%);
+}
+tbody td:first-child{
+    position:sticky;
+    left:0;
+    z-index:4;
+    min-width:230px;
+    background:#f7fbff;
+    box-shadow:8px 0 18px rgba(15,107,216,.08);
+}
+tbody tr:hover td{background:#f4f9ff}
+tbody tr:hover td:first-child{background:#eef6ff}
+.service-image{
+    width:72px;
+    height:72px;
+    object-fit:cover;
+    border-radius:16px;
+    display:block;
+    margin-bottom:8px;
+    border:2px solid rgba(15,107,216,.08);
+}
+.price{
+    font-weight:800;
+    color:#0d4f9e;
+}
+.hidden{display:none !important}
+.editor-modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(14,26,43,.45);
+    backdrop-filter:blur(4px);
+    z-index:300;
+}
+.editor-card{
+    width:min(92vw, 420px);
+    background:#fff;
+    border-radius:24px;
+    padding:22px;
+    box-shadow:0 24px 60px rgba(0,0,0,.25);
+}
+.editor-actions{
+    display:flex;
+    gap:12px;
+    justify-content:flex-end;
+    margin-top:18px;
+}
+.editor-actions button{
+    border:none;
+    border-radius:14px;
+    padding:12px 16px;
+}
+.editor-actions button:last-child{
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#fff;
+    font-weight:700;
+}
+footer{
+    padding:18px;
+    text-align:center;
+    color:var(--muted);
+}
+@media (max-width: 900px){
+    #header{flex-direction:column; align-items:flex-start}
+    .dynamic-image{width:72px; height:72px}
+    tbody td:first-child{min-width:190px}
+}
+@media (max-width: 640px){
+    .content{padding:16px 12px 28px}
+    .category-card{min-height:140px}
+    .admin-input{width:100%; min-width:0}
+    .scrollable-table{max-height:68vh}
+}
+</style>
+
 </head>
 
 <body>
@@ -29,16 +308,30 @@
         <button id="lockEditingBtn" class="admin-btn danger" type="button">Lock</button>
     </div>
     <div id="adminStatus" class="admin-status">Viewing mode enabled. Prices are locked.</div>
-    <div class="button-container">
-        <button onclick="showTable('pvc')">PVC FIITINGS</button>
-        <button onclick="showTable('iron')">IRON FITTINGS</button>
-        <button onclick="showTable('other')">WIRES AND CABLES</button>
-        <button onclick="showTable('concrete')">MOTORS & STARTERS</button>
-        <button onclick="showTable('wood')">OTHER PRODUCTS</button>
-
-    </div>
-
-    <div id="pvc" class="services">
+    
+<div class="category-grid" aria-label="Price categories">
+    <button class="category-card" type="button" onclick="goToSection('pvc')">
+        <img src="c4.png" alt="PVC fittings">
+        <span>PVC FIITINGS</span>
+    </button>
+    <button class="category-card" type="button" onclick="goToSection('iron')">
+        <img src="icu.png" alt="Iron fittings">
+        <span>IRON FITTINGS</span>
+    </button>
+    <button class="category-card" type="button" onclick="goToSection('other')">
+        <img src="cable.png" alt="Wires and cables">
+        <span>WIRES AND CABLES</span>
+    </button>
+    <button class="category-card" type="button" onclick="goToSection('concrete')">
+        <img src="auto.png" alt="Motors and starters">
+        <span>MOTORS &amp; STARTERS</span>
+    </button>
+    <button class="category-card" type="button" onclick="goToSection('wood')">
+        <img src="tape.png" alt="Other products">
+        <span>OTHER PRODUCTS</span>
+    </button>
+</div>
+<div id="pvc" class="services">
         <h2>PVC MATERIALS</h2>
         <div class="scrollable-table">
             <table class="pvc">
@@ -914,6 +1207,26 @@
 
 
 
+
+
+<script>
+function goToSection(sectionId){
+    if (typeof showTable === 'function') {
+        showTable(sectionId);
+    } else {
+        document.querySelectorAll('.services').forEach(section => {
+            section.classList.add('hidden');
+        });
+        const target = document.getElementById(sectionId);
+        if (target) target.classList.remove('hidden');
+    }
+
+    setTimeout(() => {
+        const target = document.getElementById(sectionId);
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }, 60);
+}
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
