@@ -27,22 +27,29 @@ let currentImageIndex = 0;
     }
 
     setInterval(changeImage, 3000); // Change image every 3 seconds
+function goToSection(type){
 
-    function showTable(type) {
-        document.getElementById('pvc').classList.add('hidden');
-        document.getElementById('iron').classList.add('hidden');
-        document.getElementById('other').classList.add('hidden');
-        document.getElementById('wood').classList.add('hidden');
-        document.getElementById('concrete').classList.add('hidden'); // Hide other products
+    const sections = document.querySelectorAll('.services');
 
-        if (type) {
-            document.getElementById(type).classList.remove('hidden');
-        }
+    sections.forEach(section=>{
+        section.classList.add('hidden');
+    });
+
+    const activeSection = document.getElementById(type);
+
+    if(activeSection){
+        activeSection.classList.remove('hidden');
+
+        activeSection.scrollIntoView({
+            behavior:'smooth',
+            block:'start'
+        });
     }
+}
 
-    window.onload = function() {
-        showTable('pvc'); // Show PVC materials by default
-    };
+window.onload = function () {
+    goToSection('pvc');
+};
 
 (function () {
     const SUPABASE_URL = 'https://wkldbnkystsqroofvaba.supabase.co';
