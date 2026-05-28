@@ -156,6 +156,23 @@ button, input, textarea, select{font:inherit}
     line-height:1.15;
     letter-spacing:.2px;
 }
+.dynamic-image{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:24px;
+    border:4px solid rgba(255,255,255,.75);
+    box-shadow:0 14px 28px rgba(0,0,0,.20);
+    background:#fff;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+    .dynamic-image{
+        width:140px;
+        height:140px;
+    }
+}
 .services{
     margin:28px 0 36px;
     scroll-margin-top:110px;
