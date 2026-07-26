@@ -1,1513 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chandra Motor Works offers top-notch motor services with a focus on quality and farmer satisfaction.">
-    <title>Chandra Motor Works</title>
-    <h3>(  g !UNDER DEVELOPMENT )</h3>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-            background-color: rgb(50, 50, 50);
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .dynamic-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
-        .services {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        .category-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-    gap:20px;
-    margin:25px 0;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chandra Motor Works offers motor services, fittings, cables, starter parts and live product prices." />
+  <title>Chandra Motor Works</title>
 
-.category-card{
-    border:none;
-    border-radius:22px;
-    padding:18px;
-    background:#fff;
-    cursor:pointer;
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial, sans-serif;
+      margin:0;
+      padding:0;
+      color:#fff;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,255,255,.08), transparent 25%),
+        linear-gradient(135deg,#030303 0%,#171717 42%,#4c4c4c 100%);
+      min-height:100vh;
+    }
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
+    .top-site-bar{
+      position:relative;
+      z-index:10;
+      display:grid;
+      grid-template-columns:auto minmax(260px,720px) auto;
+      gap:14px;
+      align-items:center;
+      padding:12px 18px;
+      background:rgba(0,0,0,.58);
+      border-bottom:1px solid rgba(255,255,255,.14);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .site-mini-brand{
+      justify-self:start;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.04em;
+      color:#f1f1f1;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .top-search-panel{
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 46px 46px;
+      gap:8px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      padding:6px;
+      box-shadow:0 10px 30px rgba(0,0,0,.24);
+    }
+    .top-search-panel input{
+      width:100%;
+      min-width:0;
+      padding:12px 15px;
+      border-radius:999px;
+      border:none;
+      outline:none;
+      font-size:15px;
+      font-weight:700;
+      background:#fff;
+      color:#111;
+    }
+    .top-search-panel button{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      margin:0;
+      padding:0;
+      border-radius:999px;
+      border:none;
+      font-size:18px;
+      font-weight:900;
+      background:#fff;
+      color:#111;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .top-search-panel button:hover{background:#e8e8e8}
+    .admin-area{justify-self:end;display:flex;align-items:center;gap:10px;min-width:46px;justify-content:flex-end}
+    .admin-switch-btn{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      font-size:18px;
+      font-weight:900;
+      border-radius:999px;
+      padding:0;
+      background:linear-gradient(135deg,#3c3c3c,#111);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.22);
+      cursor:pointer;
+      margin:0;
+      box-shadow:0 8px 26px rgba(0,0,0,.35);
+      white-space:nowrap;
+    }
+    .admin-switch-btn.unlocked{background:linear-gradient(135deg,#10834f,#0b5c38)}
+    .admin-status{
+      max-width:1450px;
+      margin:10px auto 0;
+      padding:0 20px;
+      font-size:13px;
+      color:#e6e6e6;
+      text-align:right;
+    }
 
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    header{text-align:center;padding:30px 20px 26px}
+    header h1{font-size:clamp(36px,6vw,76px);margin:4px 0 22px;letter-spacing:-2px;text-shadow:2px 2px 9px rgba(0,0,0,.65)}
+    .under-dev{display:inline-block;margin:0 0 12px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#eaeaea;font-weight:800;font-size:13px;letter-spacing:.03em}
+    .dynamic-image{width:100%;max-height:420px;object-fit:cover;border-radius:22px;box-shadow:0 18px 48px rgba(0,0,0,.58);border:1px solid rgba(255,255,255,.18)}
+    .content{padding:20px;text-align:center;max-width:1450px;margin:0 auto}
+    .content>h1{font-size:clamp(34px,5vw,58px);margin:12px 0 4px;text-shadow:2px 2px 8px rgba(0,0,0,.55)}
+    .content>h2{margin:0 0 18px;color:#e5e5e5;font-weight:600;text-shadow:2px 2px 5px rgba(0,0,0,.5)}
 
-    transition:.25s;
-}
+    .category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:20px;margin:28px 0}.category-card{border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:18px;background:linear-gradient(180deg,#fff,#e7e7e7);color:#111;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 14px 32px rgba(0,0,0,.25);transition:.25s;min-height:150px;justify-content:center}.category-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(0,0,0,.35)}.category-card.active-section{outline:4px solid rgba(255,255,255,.32);transform:translateY(-4px)}.category-card img{width:82px;height:82px;object-fit:contain;border-radius:18px;padding:8px;background:#fff}.category-card span{font-size:15px;font-weight:900;text-align:center}
+    .services{background:rgba(0,0,0,.68);padding:22px;border-radius:22px;margin:24px 0;box-shadow:0 18px 40px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14)}.services h2{margin-top:0;font-size:clamp(24px,3vw,36px);text-shadow:2px 2px 5px rgba(0,0,0,.5)}
+    .scrollable-table{overflow:auto;max-height:560px;position:relative;display:inline-block;width:100%;border-radius:16px;border:1px solid rgba(255,255,255,.14)}
+    .pvc{border-collapse:collapse;width:1300px;table-layout:fixed}.iron{border-collapse:collapse;width:700px;table-layout:fixed}.wires{border-collapse:collapse;width:350px;table-layout:fixed}.motor{border-collapse:collapse;width:500px;table-layout:fixed}.other{border-collapse:collapse;width:350px;table-layout:fixed}
+    th,td{padding:20px;text-align:center;border:1px solid #ddd;background-color:rgb(210,210,210);color:#000;font-weight:bold;min-width:150px;max-height:150px}th{background:linear-gradient(180deg,#555,#2e2e2e);color:#fff;position:sticky;top:0;z-index:10}td:first-child{background:linear-gradient(180deg,#171717,#050505);position:sticky;left:0;z-index:5;color:#fff}.price{color:darkred;font-weight:900;display:inline-block}.price.price-clickable{cursor:pointer;outline:2px dashed rgba(0,0,0,.22);outline-offset:3px;border-radius:8px;transition:transform .12s ease,background .12s ease;padding:5px 7px}.price.price-clickable:hover{transform:translateY(-1px);background:rgba(255,255,255,.75)}.price.price-locked{opacity:.92}.searched-highlight{animation:flashCell 1.4s ease;outline:4px solid #ffd166!important;outline-offset:-4px}@keyframes flashCell{0%{background:#fff2a8}100%{background:inherit}}
+    img.service-image{width:100%;max-height:95px;object-fit:contain}.hidden{display:none!important}button{padding:10px 20px;font-size:25px;margin-right:10px;background-color:#333;color:#fff;border:none;border-radius:5px;cursor:pointer}button:hover{background-color:#555}footer{background-color:rgba(0,0,0,.82);color:#fff;text-align:center;padding:20px 0;width:100%}
 
-.category-card:hover{
-    transform:translateY(-5px);
-}
+    .editor-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);z-index:9999;padding:16px}.editor-modal.open{display:flex}.editor-card{width:min(520px,100%);background:#1f1f1f;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px;box-shadow:0 18px 50px rgba(0,0,0,.45)}.editor-card h3{margin:0 0 10px;font-size:22px;color:#fff}.editor-meta{font-size:13px;color:#cfcfcf;margin-bottom:12px;line-height:1.5;white-space:pre-line}.editor-card input{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:#fff;color:#111;font-size:16px;font-weight:700}.editor-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.editor-actions button{font-size:15px;padding:11px 16px;border-radius:10px;margin-right:0}
 
-.category-card img{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-    border-radius:18px;
-    padding:8px;
-    background:#fff;
-}
+    .search-popup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.74);z-index:10000;padding:18px}.search-popup.open{display:flex}.search-popup-card{width:min(980px,100%);max-height:86vh;overflow:hidden;background:#171717;border:1px solid rgba(255,255,255,.16);border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.55);position:relative}.search-popup-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.13);background:linear-gradient(180deg,#242424,#151515)}.search-popup-title{margin:0;font-size:22px;color:#fff}.search-popup-subtitle{margin:4px 0 0;color:#cfcfcf;font-size:13px}.search-close-btn{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;margin:0;background:#2b2b2b;color:#fff;font-size:24px;font-weight:900;line-height:1;border:1px solid rgba(255,255,255,.14);cursor:pointer}.search-close-btn:hover{background:#8a1f1f}.search-results{padding:16px;max-height:calc(86vh - 86px);overflow:auto}.search-result-title{font-size:15px;font-weight:900;margin:0 0 12px;color:#e9e9e9}.search-result-item{display:grid;grid-template-columns:86px 1fr auto;gap:14px;align-items:center;padding:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;margin-bottom:12px;cursor:pointer;transition:.2s}.search-result-item:hover{transform:translateY(-2px);background:rgba(255,255,255,.13)}.search-result-img{width:86px;height:70px;border-radius:14px;background:#fff;object-fit:contain;padding:7px}.search-result-item strong{display:block;font-size:16px;color:#fff}.search-result-item span{display:block;color:#d7d7d7;font-size:13px;margin-top:4px}.search-result-price{color:#fff;background:#8a1f1f;padding:9px 13px;border-radius:999px;font-weight:900;white-space:nowrap}.no-results{padding:22px;border:1px dashed rgba(255,255,255,.22);border-radius:16px;color:#e6e6e6;text-align:center;font-weight:800}
 
-.category-card span{
-    font-size:15px;
-    font-weight:700;
-}
-        .scrollable-table {
-            overflow-x: auto;
-            max-height: 500px;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        .pvc {
-            border-collapse: collapse;
-            width: 1300px;
-            table-layout: fixed;
-        }
-        .iron {
-            border-collapse: collapse;
-            width: 700px;
-            table-layout: fixed;
-        }
 
-        .wires {
-            border-collapse: collapse;
-            width: 350px;
-            table-layout: fixed;
-        }
+    .fun-drop-btn{
+      background:linear-gradient(135deg,#ffd166,#ff9f1c)!important;
+      color:#111!important;
+      box-shadow:0 8px 22px rgba(255,159,28,.25);
+    }
+    .fun-pipe{
+      position:fixed;
+      top:58px;
+      left:50%;
+      width:92px;
+      height:32px;
+      transform:translateX(-50%) rotate(8deg);
+      z-index:9998;
+      pointer-events:none;
+      opacity:0;
+      transition:opacity .18s ease, transform .18s ease;
+      filter:drop-shadow(0 10px 16px rgba(0,0,0,.45));
+    }
+    .fun-pipe.show{opacity:1;transform:translateX(-50%) rotate(8deg) translateY(4px)}
+    .fun-pipe::before{
+      content:"";
+      position:absolute;
+      inset:5px 0;
+      border-radius:999px;
+      background:linear-gradient(180deg,#8c8c8c,#323232 55%,#111);
+      border:2px solid rgba(255,255,255,.28);
+    }
+    .fun-pipe::after{
+      content:"";
+      position:absolute;
+      right:-12px;
+      top:0;
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      background:linear-gradient(180deg,#bdbdbd,#3a3a3a);
+      border:2px solid rgba(255,255,255,.28);
+    }
+    .fun-pipe span{
+      position:absolute;
+      left:-7px;
+      top:7px;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:#111;
+      border:2px solid rgba(255,255,255,.22);
+      z-index:2;
+    }
+    .fun-drop-layer{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:9997;
+      overflow:hidden;
+    }
+    .fun-item{
+      position:absolute;
+      width:72px;
+      height:72px;
+      object-fit:contain;
+      background:rgba(255,255,255,.96);
+      border:3px solid rgba(255,209,102,.95);
+      border-radius:18px;
+      padding:8px;
+      box-shadow:0 18px 35px rgba(0,0,0,.38);
+      pointer-events:auto;
+      user-select:none;
+      cursor:pointer;
+      will-change:transform;
+    }
+    .fun-item:hover{border-color:#fff;box-shadow:0 20px 42px rgba(255,209,102,.32)}
 
-        .motor {
-            border-collapse: collapse;
-            width: 500px;
-            table-layout: fixed;
-        }
-
-        .other {
-            border-collapse: collapse;
-            width: 350px;
-            table-layout: fixed;
-        }
-        th, td {
-            padding: 20px;
-            text-align: center;
-            border: 1px solid #ddd;
-            background-color: rgb(200, 200, 200);
-            color: black;
-            font-weight: bold;
-            min-width: 150px;
-            max-height: 150px;
-        }
-        th {
-            background: rgb(100, 100, 100);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        td:first-child {
-            background: rgb(20,20,40);
-            position: sticky;
-            left: 0;
-            z-index: 5;
-            color:rgb(255,255,255)
-        }
-        .price {
-            color: darkred;
-            font-weight: bold;
-        }
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            width: 100%;
-        }
-        h1, h2 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        img.service-image {
-            width: 100%;
-            height: 10%;
-        }
-        .hidden {
-            display: none;
-        }
-        .button-container {
-            overflow-x: auto; /* Horizontal scrolling */
-            white-space: nowrap; /* Prevent line breaks */
-            margin: 20px 0;
-             /* Add some margin */
-        }
-        button {
-            padding: 10px 20px; /* Increased padding for larger buttons */
-            font-size: 25px; /* Larger font size */
-            margin-right: 10px; /* Space between buttons */
-            background-color: #333; /* Button background color */
-            color: #fff; /* Button text color */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor */
-        }
-        button:hover {
-            background-color: #555; /* Darker on hover */
-        }
-        @media (max-width: 768px) {
-            .dynamic-image {
-                max-height: 250px;
-            }
-            th, td {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-    
-        .admin-panel {
-            display: grid;
-            gap: 12px;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            align-items: center;
-            background: rgba(0, 0, 0, 0.78);
-            border: 1px solid rgba(255,255,255,0.16);
-            border-radius: 12px;
-            padding: 14px;
-            margin: 18px 0 10px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-        }
-        .admin-panel .admin-input {
-            padding: 12px 14px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            background: #fff;
-            color: #111;
-            font-weight: bold;
-            width: 100%;
-        }
-        .admin-panel .admin-btn {
-            padding: 12px 16px;
-            font-size: 16px;
-            background: #2c2c2c;
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 10px;
-        }
-        .admin-panel .admin-btn.primary {
-            background: #146c43;
-        }
-        .admin-panel .admin-btn.danger {
-            background: #8a1f1f;
-        }
-        .admin-status {
-            margin: 8px 0 16px;
-            font-size: 14px;
-            color: #e6e6e6;
-        }
-        .price.price-clickable {
-            cursor: pointer;
-            outline: 2px dashed rgba(255,255,255,0.16);
-            outline-offset: 3px;
-            border-radius: 6px;
-            transition: transform 0.12s ease, background 0.12s ease;
-            padding: 3px 4px;
-            display: inline-block;
-        }
-        .price.price-clickable:hover {
-            transform: translateY(-1px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .price.price-locked {
-            opacity: 0.92;
-        }
-        .editor-modal {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.72);
-            z-index: 9999;
-            padding: 16px;
-        }
-        .editor-modal.open {
-            display: flex;
-        }
-        .editor-card {
-            width: min(520px, 100%);
-            background: #1f1f1f;
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 16px;
-            padding: 18px;
-            box-shadow: 0 18px 50px rgba(0,0,0,0.45);
-        }
-        .editor-card h3 {
-            margin: 0 0 10px;
-            font-size: 22px;
-            color: #fff;
-        }
-        .editor-meta {
-            font-size: 13px;
-            color: #cfcfcf;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        .editor-card input {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1px solid rgba(255,255,255,0.16);
-            border-radius: 10px;
-            background: #fff;
-            color: #111;
-            font-size: 16px;
-            font-weight: 700;
-            box-sizing: border-box;
-        }
-        .editor-actions {
-            margin-top: 14px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        .editor-actions button {
-            font-size: 15px;
-            padding: 11px 16px;
-            border-radius: 10px;
-        }
-
-    </style>
+    @media(max-width:900px){.top-site-bar{grid-template-columns:auto 1fr auto;gap:8px;padding:9px 10px}.site-mini-brand{font-size:0;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}.site-mini-brand::before{content:'CMW';font-size:10px;font-weight:900;color:#fff}.top-search-panel{grid-template-columns:1fr 38px 38px;gap:6px;padding:5px}.top-search-panel input{padding:10px 12px;font-size:13px}.top-search-panel button,.admin-switch-btn{width:38px;height:38px;font-size:16px}.admin-area{min-width:38px}.admin-status{text-align:center;font-size:12px;margin:7px auto 0}.search-result-item{grid-template-columns:72px 1fr}.search-result-price{grid-column:2}.search-result-img{width:72px;height:62px}}
+    @media(max-width:768px){header{padding:24px 12px 18px}.content{padding:12px}.dynamic-image{max-height:260px;border-radius:16px}th,td{padding:10px;font-size:14px}.category-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}.category-card{min-height:130px}.category-card img{width:70px;height:70px}.search-result-item{grid-template-columns:1fr;text-align:center}.search-result-img{margin:auto}.search-result-price{grid-column:auto;margin:auto}}
+    @media(max-width:420px){.top-site-bar{grid-template-columns:30px 1fr 36px;gap:6px;padding:8px}.site-mini-brand{width:30px;height:30px}.site-mini-brand::before{font-size:9px}.top-search-panel{grid-template-columns:1fr 32px 32px;padding:4px}.top-search-panel input{padding:9px 10px;font-size:12px}.top-search-panel button,.admin-switch-btn{width:32px;height:32px;font-size:14px}.admin-area{min-width:32px}.admin-status{display:none}}
+  </style>
 </head>
 <body>
+  <div class="top-site-bar">
+    <div class="site-mini-brand">Chandra Motor Works</div>
+    <div class="top-search-panel">
+      <input id="productSearchInput" type="text" placeholder="Search product, section, size, type, price...">
+      <button id="productSearchBtn" type="button" aria-label="Search" title="Search">🔍</button>
+      <button id="funDropBtn" class="fun-drop-btn" type="button" aria-label="Drop a random item" title="Drop random item">🎲</button>
+    </div>
+    <div class="admin-area">
+      <button id="adminSwitchBtn" class="admin-switch-btn" type="button" aria-label="Admin Mode" title="Admin Mode">⚙</button>
+    </div>
+  </div>
+  <div id="adminStatus" class="admin-status">Viewing mode enabled. Prices are locked.</div>
+  <div id="funPipe" class="fun-pipe" aria-hidden="true"><span></span></div>
+  <div id="funDropLayer" class="fun-drop-layer" aria-hidden="true"></div>
 
-<header id="header">
+  <header id="header">
+    <div class="under-dev">UNDER DEVELOPMENT</div>
     <h1>Chandra Motor Works</h1>
     <img id="dynamicImage" class="dynamic-image" src="0.png" alt="Chandra Motor Works Dynamic Image">
-</header>
+  </header>
 
-<div class="content">
+  <div class="content">
     <h1>PRICES</h1>
     <h2>Select a Section</h2>
 
-    <div class="admin-panel">
-        <input id="adminPassword" class="admin-input" type="password" placeholder="Admin password" autocomplete="current-password">
-        <button id="unlockEditingBtn" class="admin-btn primary" type="button">Unlock Editing</button>
-        <button id="lockEditingBtn" class="admin-btn danger" type="button">Lock</button>
-    </div>
-    <div id="adminStatus" class="admin-status">Viewing mode enabled. Prices are locked.</div>
     <div class="category-grid">
-
-    <button class="category-card" onclick="showTable('pvc')">
-        <img src="c4.png" alt="">
-        <span>PVC FITTINGS</span>
-    </button>
-
-    <button class="category-card" onclick="showTable('iron')">
-        <img src="icu.png" alt="">
-        <span>IRON FITTINGS</span>
-    </button>
-
-    <button class="category-card" onclick="showTable('other')">
-        <img src="cable.png" alt="">
-        <span>WIRES & CABLES</span>
-    </button>
-
-    <button class="category-card" onclick="showTable('concrete')">
-        <img src="auto.png" alt="">
-        <span>MOTORS & STARTERS </span>
-    </button>
-
-    <button class="category-card" onclick="showTable('wood')">
-        <img src="tape.png" alt="">
-        <span>TOOLS & OTHERS</span>
-    </button>
-
-</div>
-
-    <div id="pvc" class="services">
-        <h2>PVC MATERIALS</h2>
-        <div class="scrollable-table">
-            <table class="pvc">
-                <thead>
-                    <tr>
-                        <th>______</th>
-                        <th>2" </th>
-                        <th>2 1/2"</th>
-                        <th>3"</th>
-                        <th>4"</th>
-                        <th>5"</th>
-                        <th>2"x 2 1/2"</th>
-                        <th>2" x 3"</th>
-                        <th>2" x 4"</th>
-                        <th>2 1/2" x 3"</th>
-                        <th>2 1/2" x 4"</th>
-                        <th>3" x 4"</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="c4.png" alt="Material 1">
-                            <p>CUPPLING PN4</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="c6.png" alt="Material 1">
-                            <p>CUPPLING PN6</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="c10.png" alt="Material 1">
-                            <p>CUPPLING PN10</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="el4.png" alt="Material 1">
-                            <p>ELBOW PN4 </p>
-
-                        </td>
-
-                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-                   </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="el6.png" alt="Material 1">
-                            <p>ELBOW PN6</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="el10.png" alt="Material 1">
-                            <p>ELBOW PN10</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="elt.png" alt="Material 1">
-                            <p>ELBOW THREAD</p>
-
-                        </td>
-                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="el45.png" alt="Material 1">
-                            <p>45' ELBOW</p>
-
-                        </td>
-                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="lb.png" alt="Material 1">
-                            <p>LONG BEND</p>
-
-                        </td>
-                            <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="t4.png" alt="Material 1">
-                            <p>TEE PN4 </p>
-
-                        </td>
-
-                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-                   </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="t6.png" alt="Material 1">
-                            <p>TEE PN6</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="t10.png" alt="Material 1">
-                            <p>TEE PN10</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="dt.png" alt="Material 1">
-                            <p>DOOR TEE</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="dl.png" alt="Material 1">
-                            <p>DOOR ELBOW</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="mta.png" alt="Material 1">
-                            <p>MTA</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="rmta.png" alt="Material 1">
-                            <p>R MTA</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="fta.png" alt="Material 1">
-                            <p>FTA</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="rfta.png" alt="Material 1">
-                            <p>R FTA</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="cp.png" alt="Material 1">
-                            <p>CAP PLAIN</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ct.png" alt="Material 1">
-                            <p>CAP THREAD</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="bw.png" alt="Material 1">
-                            <p>BALL WALL</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ubw.png" alt="Material 1">
-                            <p> UNION BALLWALL</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="nondrop.png" alt="Material 1">
-                            <p>NON STOP</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="pipe.png" alt="Material 1">
-                            <p> PIPES</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="bh.png" alt="Material 1">
-                            <p> BUSHES</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="vt.png" alt="Material 1">
-                            <p> VENTS</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="rc4.png" alt="Material 1">
-                            <p> REPAIR CUPPLING PN4</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="rc6.png" alt="Material 1">
-                            <p> REPAIR CUPPLING PN6</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="rsa.png" alt="Material 1">
-                            <p> REPAIR SADDLE</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ciw.png" alt="Material 1">
-                            <p> CI JOINT WHITE</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="cib.png" alt="Material 1">
-                            <p> CI JOINT BLACK</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                </tbody>
-            </table>
-        </div>
+      <button class="category-card" onclick="showTable('pvc')"><img src="c4.png" alt=""><span>PVC FITTINGS</span></button>
+      <button class="category-card" onclick="showTable('iron')"><img src="icu.png" alt=""><span>IRON FITTINGS</span></button>
+      <button class="category-card" onclick="showTable('other')"><img src="cable.png" alt=""><span>WIRES & CABLES</span></button>
+      <button class="category-card" onclick="showTable('concrete')"><img src="auto.png" alt=""><span>MOTORS & STARTERS</span></button>
+      <button class="category-card" onclick="showTable('wood')"><img src="tape.png" alt=""><span>TOOLS & OTHERS</span></button>
     </div>
 
-    <div id="iron" class="services hidden">
-        <h2>IRON MATERIALS</h2>
-        <div class="scrollable-table">
-            <table class="iron" >
-                <thead>
-                    <tr>
-                        <th>______</th>
-                        <th>2" </th>
-                        <th>2 1/2"</th>
-                        <th>3"</th>
-                        <th>2"x 2 1/2"</th>
-                        <th>2" x 3"</th>
-                        <th>2 1/2" x 3"</th>
+    <div id="pvc" class="services"></div>
+    <div id="iron" class="services hidden"></div>
+    <div id="other" class="services hidden"></div>
+    <div id="wood" class="services hidden"></div>
+    <div id="concrete" class="services hidden"></div>
+  </div>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="icu.png" alt="Material 1">
-                            <p>CUPPLING (IRON)</p>
-
-                        </td>
-
-                       <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="icu.png" alt="Material 1">
-                            <p>CUPPLING (STEEL)</p>
-
-                        </td>
-
-                        <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="iel.png" alt="Material 1">
-                            <p>ELBOW</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ibe.png" alt="Material 1">
-                            <p>BEND ROYAL</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-                   </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ibe.png" alt="Material 1">
-                            <p>BEND GI</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ite.png" alt="Material 1">
-                            <p>TEE </p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ite.png" alt="Material 1">
-                            <p>TEE for Tap</p>
-
-                        </td>
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ici.png" alt="Material 1">
-                            <p>CAP T IN</p>
-
-                        </td>
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ico.png" alt="Material 1">
-                            <p>CAP T OUT</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-                   </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="pipe.png" alt="Material 1">
-                            <p>PIPE</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="nippal.png" alt="Material 1">
-                            <p>PIPE NIPPAL 1F</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="nippal.png" alt="Material 1">
-                            <p>PIPE NIPPAL 2F</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="nippal.png" alt="Material 1">
-                            <p>PIPE NIPPAL 3F</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="nippal.png" alt="Material 1">
-                            <p>PIPE NIPPAL 4F</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ibo.png" alt="Material 1">
-                            <p>BORE COVER</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="iad.png" alt="Material 1">
-                            <p>ADAPTOR ASHIRWAD</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="ipl.png" alt="Material 1">
-                            <p>PLANGE</p>
-
-                        </td>
-
-    <td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-
-                    </tr>
-
-
-
-                </tbody>
-            </table>
+  <div id="searchPopup" class="search-popup" aria-hidden="true">
+    <div class="search-popup-card">
+      <div class="search-popup-head">
+        <div>
+          <h3 class="search-popup-title">Search Results</h3>
+          <p class="search-popup-subtitle" id="searchPopupSubtitle">Product name, section, type and price</p>
         </div>
+        <button id="closeSearchPopupBtn" class="search-close-btn" type="button" aria-label="Close search results">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
     </div>
+  </div>
 
-    <div id="other" class="services hidden">
-        <h2>WIRES AND CABLES</h2>
-        <div class="scrollable-table">
-            <table class="wires">
-                <thead>
-                    <tr>
-                        <th>_____</th>
-                        <th>TYPE 1</th>
-                        <th>TYPE 2</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="cable.png" alt="Other Product 1">
-                            <p>MOTOR CABLE WIRE</p>
-                        </td>
-                        <td><p>SIZE 2.5 sqmm</p> <p class="price">Price: Rs 00/-</p></td>                           <td><p>SIZE 4.0 sqmm</p> <p class="price">Price: Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="cwire.png" alt="Other Product 1">
-                            <p>COPER WIRE</p>
-                        </td>
-                        <td><p>SMALL (6 mm)</p> <p class="price">Price: Rs 00/-</p></td>                           <td><p>BIG (10 mm)</p> <p class="price">Price: Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.0</p>
-                        </td>
-                        <td> <p>FINOLEX</p>    <p class="price">Price: Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.1</p>
-                        </td>
-                        <td>  <p>FINOLEX</p>  <p class="price">Price: Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.2</p>
-                        </td>
-                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.3</p>
-                        </td>
-                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.4</p>
-                        </td>
-                        <td>  <p>FINOLEX</p>  <p class="price">  Price : Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">  Price : Rs 00/-</p></td>
-
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="wwire.png" alt="Other Product 1">
-                            <p>WINDING 1.5</p>
-                        </td>
-                        <td> <p>FINOLEX</p>   <p class="price">  Price : Rs 00/-</p></td>
-                        <td><p>SABAR</p> <p class="price">Price: Rs 00/-</p></td>
-
-
-                    </tr>
-
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div id="wood" class="services hidden">
-        <h2>OTHERS PRODUCTS</h2>
-        <div class="scrollable-table">
-            <table class="other">
-                <thead>
-                    <tr>
-                        <th> _____</th>
-                        <th>PRICE</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                      <tr><td>
-                            <img class="service-image" src="tape.png" alt="Other Product 1">
-                            <p>TAPE</p>
-                        </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
-                      </tr>
-                      <tr><td>
-                                                        <img class="service-image" src="rubber.png" alt="Other Product 1">
-                                                        <p>RUBBER</p>
-                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-
-                                            <tr><td>
-                                                        <img class="service-image" src="shalac.png" alt="Other Product 1">
-                                                        <p>SHALAC</p>
-                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-                                            <tr><td>
-                                                        <img class="service-image" src="declom.png" alt="Other Product 1">
-                                                        <p>Dec Tape</p>
-                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-                                            <tr><td>
-                                                        <img class="service-image" src="blade.jpg" alt="Other Product 1">
-                                                        <p>BLADE</p>
-                                                </td><td>    <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-                                            <tr><td>
-                                                        <img class="service-image" src="sdrive.png" alt="Other Product 1">
-                                                        <p>SCREW DRIVER</p>
-                                                </td><td>  <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-                                            <tr><td>
-                                                        <img class="service-image" src="cblade.png" alt="Other Product 1">
-                                                        <p>CUTTING BLADE</p>
-                                                </td><td> <p >Price</p><p class="price"> Rs 00/-</p></td>
-                                            </tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div id="concrete" class="services hidden">
-        <h2> MOTOR SPARES AND STARTERS</h2>
-        <div class="scrollable-table">
-            <table class ="motor">
-                <thead>
-                    <tr>
-                        <th>______</th>
-                        <th>TYPE 1</th>
-                        <th>TYPE 2</th>
-                        <th>TYPE 3</th>
-                        <th>TYPE 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                <tr>
-                        <td>
-                            <img class="service-image" src="auto.png" alt="Concrete Type 1">
-                            <p>AUTOMATIC</p>
-                        </td>
-                        <td>
-                            <p>METAL 3 MONTHS </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>METAL 6 MONTHS </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>PLASTIC 3 MONTHS </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>PLASTIC 6 MONTHS </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <img class="service-image" src="fuse.png" alt="Concrete Type 1">
-                            <p>FUSES</p>
-                        </td>
-                        <td>
-                            <p>ANCHOR 63 A </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>ANCHOR 100 A </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>RAMA 63 A </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>RAMA 63 A </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="service-image" src="starter.png" alt="Concrete Type 1">
-                            <p>STARTER</p>
-                        </td>
-                        <td>
-                            <p> MEX 10 HP </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>MEX 15 HP </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>MEX 20 HP</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>MEX 25 HP</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                         </tr>
-
-                        <tr>
-                        <td>
-                            <img class="service-image" src="oil.png" alt="Concrete Type 1">
-                            <p>STARTER OIL</p>
-                        </td>
-                        <td>
-                            <p> 1 Liter (FIRST Class) </p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>1 Liter (LOCAL Class)</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>4.5 Liter (FIRST Class)</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                            <p>4.5 Liter (LOCAL Class)</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                         </tr>
-                        <tr>
-                        <td>
-                            <img class="service-image" src="startbox.png" alt="Concrete Type 1">
-                            <p>STARTER BOX</p>
-                        </td>
-                        <td>
-                            <p>LIGHT  WEIGHT</p>
-                            <p >Price</p><p class="price"> Rs 00/-</p>
-                        </td>
-                        <td>
-                             <p>LIGHT  WEIGHT</p>
-                            <p class="price">Price:    Rs.48</p>
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                         </tr>
-
-
-
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-
-<div id="priceEditorModal" class="editor-modal" aria-hidden="true">
+  <div id="adminPasswordModal" class="editor-modal" aria-hidden="true">
     <div class="editor-card">
-        <h3>Edit Price</h3>
-        <div class="editor-meta" id="priceEditorMeta">Selected item</div>
-        <input id="priceEditorInput" type="text" placeholder="Enter new price">
-        <div class="editor-actions">
-            <button id="cancelEditorBtn" type="button">Cancel</button>
-            <button id="saveEditorBtn" type="button">Save Price</button>
-        </div>
+      <h3>Admin Login</h3>
+      <div class="editor-meta">Enter admin password to unlock price editing.</div>
+      <input id="adminPasswordPopupInput" type="password" placeholder="Admin password">
+      <div class="editor-actions">
+        <button id="cancelAdminPopupBtn" type="button">Cancel</button>
+        <button id="confirmAdminPasswordBtn" type="button">Unlock</button>
+      </div>
     </div>
-</div>
+  </div>
 
-<footer>
-    <p>&copy; 2024 Chandra Motor Works. All rights reserved.</p>
-</footer>
+  <div id="priceEditorModal" class="editor-modal" aria-hidden="true">
+    <div class="editor-card">
+      <h3>Edit Price</h3>
+      <div class="editor-meta" id="priceEditorMeta">Selected item</div>
+      <input id="priceEditorInput" type="text" placeholder="Enter new price">
+      <div class="editor-actions">
+        <button id="cancelEditorBtn" type="button">Cancel</button>
+        <button id="saveEditorBtn" type="button">Save Price</button>
+      </div>
+    </div>
+  </div>
 
-<script>
-    let currentImageIndex = 0;
-    const totalImages = 9; // Total images from 0.png to 8.png
-    const imageElement = document.getElementById('dynamicImage');
+  <footer><p>&copy; 2026 Chandra Motor Works. All rights reserved.</p></footer>
 
-    function changeImage() {
-        currentImageIndex = (currentImageIndex + 1) % totalImages;
-        imageElement.src = currentImageIndex + '.png';
-    }
-
-    setInterval(changeImage, 3000); // Change image every 3 seconds
-
-    function showTable(type) {
-        document.getElementById('pvc').classList.add('hidden');
-        document.getElementById('iron').classList.add('hidden');
-        document.getElementById('other').classList.add('hidden');
-        document.getElementById('wood').classList.add('hidden');
-        document.getElementById('concrete').classList.add('hidden'); // Hide other products
-
-        if (type) {
-            document.getElementById(type).classList.remove('hidden');
-        }
-    }
-
-    window.onload = function() {
-        showTable('pvc'); // Show PVC materials by default
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  (function(){
+    const SUPABASE_URL='https://wkldbnkystsqroofvaba.supabase.co';
+    const SUPABASE_KEY='sb_publishable_Con6nSBq4lFs1A2K6jAP4w_o2fY81K2';
+    const ADMIN_PASSWORD='GT07';
+    const TABLE_NAME='prices';
+    const DEFAULT_PRICE='Rs 00/-';
+    const DATA={
+      pvc:{title:'PVC MATERIALS',cls:'pvc',columns:['2"','2 1/2"','3"','4"','5"','2" x 2 1/2"','2" x 3"','2" x 4"','2 1/2" x 3"','2 1/2" x 4"','3" x 4"'],rows:[['CUPPLING PN4','c4.png'],['CUPPLING PN6','c6.png'],['CUPPLING PN10','c10.png'],['ELBOW PN4','el4.png'],['ELBOW PN6','el6.png'],['ELBOW PN10','el10.png'],['ELBOW THREAD','elt.png'],['45\' ELBOW','el45.png'],['LONG BEND','lb.png'],['TEE PN4','t4.png'],['TEE PN6','t6.png'],['TEE PN10','t10.png'],['DOOR TEE','dt.png'],['DOOR ELBOW','dl.png'],['MTA','mta.png'],['R MTA','rmta.png'],['FTA','fta.png'],['R FTA','rfta.png'],['CAP PLAIN','cp.png'],['CAP THREAD','ct.png'],['BALL WALL','bw.png'],['UNION BALLWALL','ubw.png'],['NON STOP','nondrop.png'],['PIPES','pipe.png'],['BUSHES','bh.png'],['VENTS','vt.png'],['REPAIR CUPPLING PN4','rc4.png'],['REPAIR CUPPLING PN6','rc6.png'],['REPAIR SADDLE','rsa.png'],['CI JOINT WHITE','ciw.png'],['CI JOINT BLACK','cib.png']].map(r=>({name:r[0],img:r[1]}))},
+      iron:{title:'IRON MATERIALS',cls:'iron',columns:['2"','2 1/2"','3"','2" x 2 1/2"','2" x 3"','2 1/2" x 3"'],rows:[['CUPPLING (IRON)','icu.png'],['CUPPLING (STEEL)','icu.png'],['ELBOW','iel.png'],['BEND ROYAL','ibe.png'],['BEND GI','ibe.png'],['TEE','ite.png'],['TEE for Tap','ite.png'],['CAP T IN','ici.png'],['CAP T OUT','ico.png'],['PIPE','pipe.png'],['PIPE NIPPAL 1F','nippal.png'],['PIPE NIPPAL 2F','nippal.png'],['PIPE NIPPAL 3F','nippal.png'],['PIPE NIPPAL 4F','nippal.png'],['BORE COVER','ibo.png'],['ADAPTOR ASHIRWAD','iad.png'],['PLANGE','ipl.png']].map(r=>({name:r[0],img:r[1]}))},
+      other:{title:'WIRES AND CABLES',cls:'wires',columns:['TYPE 1','TYPE 2'],rows:[{name:'MOTOR CABLE WIRE',img:'cable.png',cells:['SIZE 2.5 sqmm','SIZE 4.0 sqmm']},{name:'COPER WIRE',img:'cwire.png',cells:['SMALL (6 mm)','BIG (10 mm)']},{name:'WINDING 1.0',img:'wwire.png',cells:['FINOLEX','SABAR']},{name:'WINDING 1.1',img:'wwire.png',cells:['FINOLEX','SABAR']},{name:'WINDING 1.2',img:'wwire.png',cells:['FINOLEX','SABAR']},{name:'WINDING 1.3',img:'wwire.png',cells:['FINOLEX','SABAR']},{name:'WINDING 1.4',img:'wwire.png',cells:['FINOLEX','SABAR']},{name:'WINDING 1.5',img:'wwire.png',cells:['FINOLEX','SABAR']}]},
+      wood:{title:'OTHERS PRODUCTS',cls:'other',columns:['PRICE'],rows:[['TAPE','tape.png'],['RUBBER','rubber.png'],['SHALAC','shalac.png'],['Dec Tape','declom.png'],['BLADE','blade.jpg'],['SCREW DRIVER','sdrive.png'],['CUTTING BLADE','cblade.png']].map(r=>({name:r[0],img:r[1]}))},
+      concrete:{title:'MOTOR SPARES AND STARTERS',cls:'motor',columns:['TYPE 1','TYPE 2','TYPE 3','TYPE 4'],rows:[{name:'AUTOMATIC',img:'auto.png',cells:['METAL 3 MONTHS','METAL 6 MONTHS','PLASTIC 3 MONTHS','PLASTIC 6 MONTHS']},{name:'FUSES',img:'fuse.png',cells:['ANCHOR 63 A','ANCHOR 100 A','RAMA 63 A','RAMA 63 A']},{name:'STARTER',img:'starter.png',cells:['MEX 10 HP','MEX 15 HP','MEX 20 HP','MEX 25 HP']},{name:'STARTER OIL',img:'oil.png',cells:['1 Liter (FIRST Class)','1 Liter (LOCAL Class)','4.5 Liter (FIRST Class)','4.5 Liter (LOCAL Class)']},{name:'STARTER BOX',img:'startbox.png',cells:['LIGHT WEIGHT','LIGHT WEIGHT','','']}]} 
     };
-</script>
+    let currentImageIndex=0,supabaseClient=null,adminUnlocked=false,editingElement=null;
+    const $=id=>document.getElementById(id);
+    const imageElement=$('dynamicImage'),statusEl=$('adminStatus'),adminSwitchBtn=$('adminSwitchBtn'),adminPasswordModal=$('adminPasswordModal'),adminPasswordPopupInput=$('adminPasswordPopupInput'),confirmAdminPasswordBtn=$('confirmAdminPasswordBtn'),cancelAdminPopupBtn=$('cancelAdminPopupBtn'),modalEl=$('priceEditorModal'),modalInputEl=$('priceEditorInput'),modalMetaEl=$('priceEditorMeta'),saveBtn=$('saveEditorBtn'),cancelBtn=$('cancelEditorBtn'),searchInput=$('productSearchInput'),searchBtn=$('productSearchBtn'),searchPopup=$('searchPopup'),closeSearchPopupBtn=$('closeSearchPopupBtn'),searchResults=$('searchResults'),searchPopupSubtitle=$('searchPopupSubtitle'),funDropBtn=$('funDropBtn'),funDropLayer=$('funDropLayer'),funPipe=$('funPipe');
+    function normalizePriceText(t){return String(t||'').trim().replace(/\s+/g,' ')}
+    function setStatus(m){if(statusEl)statusEl.textContent=m}
+    function slug(t){return String(t||'item').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,48)||'item'}
+    function priceId(sectionId,rowIndex,priceIndex,rowName){return `${sectionId}__r${rowIndex}__p${priceIndex}__${slug(rowName)}`}
+    function renderTable(sectionId){const section=DATA[sectionId],host=$(sectionId);let html=`<h2>${section.title}</h2><div class="scrollable-table"><table class="${section.cls}"><thead><tr><th>______</th>${section.columns.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>`;section.rows.forEach((row,rowIndex)=>{const cells=row.cells||section.columns;html+=`<tr><td><img class="service-image" src="${row.img}" alt="${row.name}"><p>${row.name}</p></td>`;for(let i=0;i<section.columns.length;i++){const variant=cells[i]||'';if(sectionId==='concrete'&&!variant){html+='<td></td>';continue}const id=priceId(sectionId,rowIndex,i,row.name);html+=`<td>${variant&&row.cells?`<p>${variant}</p>`:'<p>Price</p>'}<p class="price" data-price-id="${id}" data-section-id="${sectionId}" data-row-index="${rowIndex}" data-price-index="${i}">${sectionId==='concrete'&&row.name==='STARTER BOX'&&i===1?'Price: Rs.48':DEFAULT_PRICE}</p></td>`}html+='</tr>'});html+='</tbody></table></div>';host.innerHTML=html}
+    function renderAll(){['pvc','iron','other','wood','concrete'].forEach(renderTable)}
+    function changeImage(){if(!imageElement)return;currentImageIndex=(currentImageIndex+1)%9;imageElement.src=currentImageIndex+'.png'}setInterval(changeImage,3000);
+    window.showTable=function(type, shouldScroll=true){['pvc','iron','other','wood','concrete'].forEach(id=>{const s=$(id);if(s)s.classList.add('hidden')});const selected=$(type);if(selected){selected.classList.remove('hidden');if(shouldScroll){setTimeout(()=>selected.scrollIntoView({behavior:'smooth',block:'start'}),80)}}document.querySelectorAll('.category-card').forEach(btn=>{const txt=btn.getAttribute('onclick')||'';btn.classList.toggle('active-section',txt.includes("'"+type+"'"))})}
+    function getSectionIdForElement(el){const s=el.closest('.services');return s?s.id:'unknown'}
+    function getSectionTitle(id){return DATA[id]?.title||id}
+    function getRowLabel(el){const row=el.closest('tr');const p=row?.querySelector('td:first-child p');return normalizePriceText(p?.textContent||'Price box')}
+    function getRowImage(el){const row=el.closest('tr');const img=row?.querySelector('td:first-child img');return img?img.getAttribute('src'):''}
+    function getColumnLabel(el){const cell=el.closest('td'),row=el.closest('tr'),table=el.closest('table');if(!cell||!row||!table)return'';const idx=Array.from(row.children).indexOf(cell);const head=table.querySelector(`thead tr th:nth-child(${idx+1})`);const headText=normalizePriceText(head?.textContent||'');const ps=Array.from(cell.querySelectorAll('p')).filter(p=>!p.classList.contains('price')).map(p=>normalizePriceText(p.textContent)).filter(t=>t&&!/^price$/i.test(t));return ps.join(' | ')||headText}
+    function collectPricePayload(){return Array.from(document.querySelectorAll('.price')).map(el=>({id:el.dataset.priceId,value:normalizePriceText(el.textContent),section:el.dataset.sectionId||getSectionIdForElement(el),row_label:getRowLabel(el),row_index:Number(el.dataset.rowIndex||0),price_index:Number(el.dataset.priceIndex||0)}))}
+    function openAdminPasswordPopup(){adminPasswordModal.classList.add('open');adminPasswordModal.setAttribute('aria-hidden','false');adminPasswordPopupInput.value='';setTimeout(()=>adminPasswordPopupInput.focus(),80)}
+    function closeAdminPasswordPopup(){adminPasswordModal.classList.remove('open');adminPasswordModal.setAttribute('aria-hidden','true')}
+    function enableEditing(enabled){adminUnlocked=enabled;document.querySelectorAll('.price').forEach(el=>{el.classList.toggle('price-clickable',enabled);el.classList.toggle('price-locked',!enabled)});adminSwitchBtn.classList.toggle('unlocked',enabled);adminSwitchBtn.textContent=enabled?'✓':'⚙';adminSwitchBtn.title=enabled?'Admin On':'Admin Mode';adminSwitchBtn.setAttribute('aria-label',enabled?'Admin On':'Admin Mode');setStatus(enabled?'Admin mode unlocked. Tap any price box to edit.':'Viewing mode enabled. Prices are locked.')}
+    function openModalForElement(el){editingElement=el;const row=getRowLabel(el),sec=getSectionTitle(getSectionIdForElement(el)),col=getColumnLabel(el);modalMetaEl.textContent=`${sec}\n${row}${col?' • '+col:''}\nID: ${el.dataset.priceId}`;modalInputEl.value=normalizePriceText(el.textContent);modalEl.classList.add('open');modalEl.setAttribute('aria-hidden','false');setTimeout(()=>modalInputEl.focus(),50)}
+    function closeModal(){editingElement=null;modalEl.classList.remove('open');modalEl.setAttribute('aria-hidden','true')}
+    function openSearchPopup(){searchPopup.classList.add('open');searchPopup.setAttribute('aria-hidden','false')}
+    function closeSearchPopup(){searchPopup.classList.remove('open');searchPopup.setAttribute('aria-hidden','true')}
+    async function upsertPriceRow(payload){if(!supabaseClient){alert('Supabase is not connected.');return false}const {error}=await supabaseClient.from(TABLE_NAME).upsert(payload,{onConflict:'id'});if(error){console.error(error);alert(JSON.stringify(error));return false}return true}
+    async function loadPricesFromSupabase(){if(!supabaseClient)return;const {data,error}=await supabaseClient.from(TABLE_NAME).select('id,value');if(error){console.error('Supabase load error:',error);setStatus('Load failed. Check Supabase table, RLS, and policies.');return}const map=new Map();(data||[]).forEach(r=>{if(r&&r.id!=null)map.set(String(r.id),String(r.value??''))});document.querySelectorAll('.price').forEach(el=>{if(map.has(el.dataset.priceId))el.textContent=map.get(el.dataset.priceId)})}
+    async function seedMissingRows(){if(!supabaseClient)return;const payload=collectPricePayload();const {data,error}=await supabaseClient.from(TABLE_NAME).select('id');if(error){console.error('Seed check error:',error);return}const existing=new Set((data||[]).map(r=>String(r.id)));const missing=payload.filter(r=>!existing.has(r.id));if(missing.length){const {error:insertError}=await supabaseClient.from(TABLE_NAME).upsert(missing,{onConflict:'id'});if(insertError){console.error('Seed insert error:',insertError);setStatus('Initial sync could not complete. Check permissions.')}}}
+    function bindAdminSwitch(){adminSwitchBtn.addEventListener('click',()=>{if(adminUnlocked){enableEditing(false);closeModal();return}openAdminPasswordPopup()});confirmAdminPasswordBtn.addEventListener('click',()=>{if(normalizePriceText(adminPasswordPopupInput.value)!==ADMIN_PASSWORD){alert('Wrong password');return}closeAdminPasswordPopup();enableEditing(true)});cancelAdminPopupBtn.addEventListener('click',closeAdminPasswordPopup);adminPasswordModal.addEventListener('click',ev=>{if(ev.target===adminPasswordModal)closeAdminPasswordPopup()});adminPasswordPopupInput.addEventListener('keydown',ev=>{if(ev.key==='Enter')confirmAdminPasswordBtn.click();if(ev.key==='Escape')closeAdminPasswordPopup()})}
+    function bindPriceClicks(){document.addEventListener('click',ev=>{const p=ev.target.closest('.price');if(p&&adminUnlocked)openModalForElement(p)});cancelBtn.addEventListener('click',closeModal);modalEl.addEventListener('click',ev=>{if(ev.target===modalEl)closeModal()});saveBtn.addEventListener('click',async()=>{if(!editingElement)return;const newValue=normalizePriceText(modalInputEl.value);if(!newValue){alert('Enter a price first');return}editingElement.textContent=newValue;const payload={id:editingElement.dataset.priceId,value:newValue,section:editingElement.dataset.sectionId||getSectionIdForElement(editingElement),row_label:getRowLabel(editingElement),row_index:Number(editingElement.dataset.rowIndex||0),price_index:Number(editingElement.dataset.priceIndex||0),updated_at:new Date().toISOString()};const ok=await upsertPriceRow(payload);if(ok){closeModal();setStatus(`Saved ${payload.row_label} to Supabase.`)}});modalInputEl.addEventListener('keydown',ev=>{if(ev.key==='Enter'){ev.preventDefault();saveBtn.click()}if(ev.key==='Escape'){ev.preventDefault();closeModal()}})}
+    function buildSearchData(){return Array.from(document.querySelectorAll('.price')).map(priceEl=>{const sectionId=getSectionIdForElement(priceEl),sectionName=getSectionTitle(sectionId),productName=getRowLabel(priceEl),variant=getColumnLabel(priceEl),price=normalizePriceText(priceEl.textContent),img=getRowImage(priceEl);return{sectionId,sectionName,productName,variant,price,img,priceEl,searchText:`${sectionName} ${productName} ${variant} ${price}`.toLowerCase()}})}
+    function performSearch(){const query=normalizePriceText(searchInput.value).toLowerCase();openSearchPopup();if(!query){searchPopupSubtitle.textContent='Type something in search box to find products.';searchResults.innerHTML='<div class="no-results">Please enter a product name, section, size, type, or price.</div>';return}const matches=buildSearchData().filter(item=>item.searchText.includes(query)).slice(0,80);searchPopupSubtitle.textContent=`Showing results for: ${searchInput.value}`;if(!matches.length){searchResults.innerHTML='<div class="no-results">No results found</div>';return}searchResults.innerHTML=`<div class="search-result-title">${matches.length} result(s) found</div>${matches.map((item,index)=>`<div class="search-result-item" data-search-index="${index}"><img class="search-result-img" src="${item.img}" alt="${item.productName}"><div><strong>${item.productName}</strong><span>${item.sectionName}${item.variant?' • '+item.variant:''}</span></div><div class="search-result-price">${item.price}</div></div>`).join('')}`;searchResults.querySelectorAll('.search-result-item').forEach((el,index)=>el.addEventListener('click',()=>{const item=matches[index];closeSearchPopup();window.showTable(item.sectionId);setTimeout(()=>{const targetCell=item.priceEl.closest('td');item.priceEl.scrollIntoView({behavior:'smooth',block:'center',inline:'center'});if(targetCell){targetCell.classList.add('searched-highlight');setTimeout(()=>targetCell.classList.remove('searched-highlight'),1600)}},250)}))}
 
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-(function () {
-    const SUPABASE_URL = 'https://wkldbnkystsqroofvaba.supabase.co';
-    const SUPABASE_KEY = 'sb_publishable_Con6nSBq4lFs1A2K6jAP4w_o2fY81K2';
-    const ADMIN_PASSWORD = 'GT07';
-    const TABLE_NAME = 'prices';
-
-    let supabaseClient = null;
-    let adminUnlocked = false;
-    let editingElement = null;
-
-    const statusEl = document.getElementById('adminStatus');
-    const modalEl = document.getElementById('priceEditorModal');
-    const modalInputEl = document.getElementById('priceEditorInput');
-    const modalMetaEl = document.getElementById('priceEditorMeta');
-    const unlockBtn = document.getElementById('unlockEditingBtn');
-    const lockBtn = document.getElementById('lockEditingBtn');
-    const passwordEl = document.getElementById('adminPassword');
-    const saveBtn = document.getElementById('saveEditorBtn');
-    const cancelBtn = document.getElementById('cancelEditorBtn');
-
-    function setStatus(msg) {
-        if (statusEl) statusEl.textContent = msg;
-    }
-
-    function normalizePriceText(text) {
-        return String(text || '').trim().replace(/\s+/g, ' ');
-    }
-
-    function getSectionIdForElement(el) {
-        const section = el.closest('.services');
-        return section ? section.id : 'unknown';
-    }
-
-    function getRowLabel(el) {
-        const row = el.closest('tr');
-        if (!row) return 'Unknown row';
-        const labelNode = row.querySelector('td:first-child p, td:first-child .product-name');
-        return labelNode ? normalizePriceText(labelNode.textContent) : 'Price box';
-    }
-
-    function assignStableIds() {
-        const sections = document.querySelectorAll('.services');
-        sections.forEach((section) => {
-            const sectionId = section.id || 'section';
-            const priceCells = section.querySelectorAll('.price');
-            let currentRowIndex = 0;
-            let rowMap = new Map();
-
-            section.querySelectorAll('tbody tr').forEach((row, rowIndex) => {
-                const pricesInRow = row.querySelectorAll('.price');
-                pricesInRow.forEach((priceEl, priceIndex) => {
-                    if (!priceEl.dataset.priceId) {
-                        const rowText = getRowLabel(priceEl).toLowerCase()
-                            .replace(/[^a-z0-9]+/g, '_')
-                            .replace(/^_|_$/g, '')
-                            .slice(0, 48) || 'item';
-                        priceEl.dataset.priceId = `${sectionId}__r${rowIndex}__p${priceIndex}__${rowText}`;
-                    }
-                    priceEl.dataset.sectionId = sectionId;
-                    priceEl.dataset.rowIndex = String(rowIndex);
-                    priceEl.dataset.priceIndex = String(priceIndex);
-                    priceEl.classList.add('price-clickable', 'price-locked');
-                });
-            });
-        });
-    }
-
-    function collectPricePayload() {
-        return Array.from(document.querySelectorAll('.price')).map((el) => ({
-            id: el.dataset.priceId,
-            value: normalizePriceText(el.textContent),
-            section: el.dataset.sectionId || getSectionIdForElement(el),
-            row_label: getRowLabel(el),
-            row_index: Number(el.dataset.rowIndex || 0),
-            price_index: Number(el.dataset.priceIndex || 0)
-        }));
-    }
-
-    function openModalForElement(el) {
-        editingElement = el;
-        const rowLabel = getRowLabel(el);
-        modalMetaEl.textContent = `${rowLabel}\nID: ${el.dataset.priceId}`;
-        modalInputEl.value = normalizePriceText(el.textContent);
-        modalEl.classList.add('open');
-        modalEl.setAttribute('aria-hidden', 'false');
-        setTimeout(() => modalInputEl.focus(), 50);
-    }
-
-    function closeModal() {
-        editingElement = null;
-        modalEl.classList.remove('open');
-        modalEl.setAttribute('aria-hidden', 'true');
-    }
-
-    async function upsertPriceRow(payload) {
-
-    const { data, error } = await supabaseClient
-        .from('prices')
-        .upsert(payload, {
-            onConflict: 'id'
-        });
-
-    if (error) {
-        console.error(error);
-        alert(JSON.stringify(error));
-        return false;
-    }
-
-    console.log("Saved:", data);
-    return true;
-}
-
-    async function loadPricesFromSupabase() {
-        if (!supabaseClient) return;
-        const { data, error } = await supabaseClient.from(TABLE_NAME).select('id,value');
-        if (error) {
-            console.error('Supabase load error:', error);
-            setStatus('Load failed. Check Supabase table, RLS, and policies.');
-            return;
+    const FUN_IMAGES=['c4.png','c6.png','c10.png','el4.png','el6.png','el10.png','elt.png','el45.png','lb.png','t4.png','t6.png','t10.png','dt.png','dl.png','mta.png','rmta.png','fta.png','rfta.png','cp.png','ct.png','bw.png','ubw.png','nondrop.png','pipe.png','bh.png','vt.png','rc4.png','rc6.png','rsa.png','ciw.png','cib.png','icu.png','iel.png','ibe.png','ite.png','ici.png','ico.png','nippal.png','ibo.png','iad.png','ipl.png','cable.png','cwire.png','wwire.png','auto.png','fuse.png','starter.png','oil.png','startbox.png','tape.png','rubber.png','shalac.png','declom.png','blade.jpg','sdrive.png','cblade.png'];
+    function launchFunItem(){
+      if(!funDropLayer||!funDropBtn)return;
+      const imgSrc=FUN_IMAGES[Math.floor(Math.random()*FUN_IMAGES.length)];
+      const item=document.createElement('img');
+      item.className='fun-item';
+      item.src=imgSrc;
+      item.alt='Random product item';
+      funDropLayer.appendChild(item);
+      const vw=window.innerWidth;
+      const vh=window.innerHeight;
+      const startX=Math.max(22, Math.min(vw-92, vw*0.5 + (Math.random()*110-55)));
+      const startY=70;
+      let x=startX, y=startY;
+      let vx=(Math.random()<0.5?-1:1)*(3.2+Math.random()*4.2);
+      let vy=1.5+Math.random()*2.4;
+      let rot=Math.random()*50-25;
+      let vr=(Math.random()<0.5?-1:1)*(4+Math.random()*7);
+      const gravity=0.42;
+      let bounced=false;
+      let flying=false;
+      let last=performance.now();
+      if(funPipe){funPipe.classList.add('show');setTimeout(()=>funPipe.classList.remove('show'),520)}
+      function draw(){item.style.transform=`translate3d(${x}px,${y}px,0) rotate(${rot}deg)`}
+      draw();
+      item.addEventListener('click',()=>{
+        flying=true;
+        item.style.borderColor='#fff';
+        item.style.background='rgba(255,255,255,1)';
+        vx=(x<vw/2?-1:1)*(10+Math.random()*5);
+        vy=-(7+Math.random()*5);
+        vr=(vx>0?1:-1)*(14+Math.random()*10);
+      });
+      function step(now){
+        const dt=Math.min(32,now-last)/16.67;
+        last=now;
+        vy+=gravity*dt;
+        x+=vx*dt;
+        y+=vy*dt;
+        rot+=vr*dt;
+        if(!flying && !bounced && y+72>vh-28){
+          y=vh-100;
+          vy=-(9+Math.random()*3.5);
+          vx*=1.18;
+          bounced=true;
+          item.style.borderColor='rgba(49,210,124,.95)';
         }
-
-        const map = new Map();
-        (data || []).forEach(row => {
-            if (row && row.id != null) map.set(String(row.id), String(row.value ?? ''));
-        });
-
-        document.querySelectorAll('.price').forEach(el => {
-            const id = el.dataset.priceId;
-            if (map.has(id)) {
-                el.textContent = map.get(id);
-            }
-        });
-    }
-
-    async function seedMissingRows() {
-        if (!supabaseClient) return;
-        const payload = collectPricePayload();
-
-        const { data, error } = await supabaseClient.from(TABLE_NAME).select('id');
-        if (error) {
-            console.error('Seed check error:', error);
-            return;
+        if(bounced && !flying && vy>0 && y>vh-120){
+          flying=true;
+          vx=(vx>=0?1:-1)*(8+Math.random()*4);
+          vy=-(4+Math.random()*3);
         }
-
-        const existing = new Set((data || []).map(row => String(row.id)));
-        const missing = payload.filter(row => !existing.has(row.id));
-
-        if (missing.length) {
-            const { error: insertError } = await supabaseClient.from(TABLE_NAME).upsert(missing, { onConflict: 'id' });
-            if (insertError) {
-                console.error('Seed insert error:', insertError);
-                setStatus('Initial sync could not complete. Check permissions.');
-                return;
-            }
-        }
+        draw();
+        if(x<-130||x>vw+130||y>vh+160||y<-180){item.remove();return}
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    function bindFunDrop(){
+      if(!funDropBtn)return;
+      funDropBtn.addEventListener('click',()=>{
+        const count=1+Math.floor(Math.random()*2);
+        for(let i=0;i<count;i++)setTimeout(launchFunItem,i*160);
+      });
     }
 
-    function enableEditing(enabled) {
-        adminUnlocked = enabled;
-        document.querySelectorAll('.price').forEach(el => {
-            el.classList.toggle('price-clickable', enabled);
-            el.classList.toggle('price-locked', !enabled);
-        });
-        setStatus(enabled ? 'Admin mode unlocked. Tap any price box to edit.' : 'Viewing mode enabled. Prices are locked.');
-    }
-
-    function bindPriceClicks() {
-        document.addEventListener('click', async (ev) => {
-            const priceEl = ev.target.closest('.price');
-            if (!priceEl) return;
-
-            if (!adminUnlocked) {
-                return;
-            }
-            openModalForElement(priceEl);
-        });
-
-        unlockBtn.addEventListener('click', async () => {
-            const entered = (passwordEl.value || '').trim();
-            if (entered !== ADMIN_PASSWORD) {
-                alert('Wrong password');
-                return;
-            }
-            enableEditing(true);
-            passwordEl.value = '';
-        });
-
-        lockBtn.addEventListener('click', () => {
-            enableEditing(false);
-            closeModal();
-        });
-
-        cancelBtn.addEventListener('click', closeModal);
-
-        modalEl.addEventListener('click', (ev) => {
-            if (ev.target === modalEl) closeModal();
-        });
-
-        saveBtn.addEventListener('click', async () => {
-            if (!editingElement) return;
-            const newValue = normalizePriceText(modalInputEl.value);
-            if (!newValue) {
-                alert('Enter a price first');
-                return;
-            }
-
-            editingElement.textContent = newValue;
-
-            const payload = {
-                id: editingElement.dataset.priceId,
-                value: newValue,
-                section: editingElement.dataset.sectionId || getSectionIdForElement(editingElement),
-                row_label: getRowLabel(editingElement),
-                row_index: Number(editingElement.dataset.rowIndex || 0),
-                price_index: Number(editingElement.dataset.priceIndex || 0),
-                updated_at: new Date().toISOString()
-            };
-
-            const ok = await upsertPriceRow(payload);
-            if (ok) {
-                closeModal();
-                setStatus(`Saved ${payload.id} to Supabase.`);
-            }
-        });
-
-        modalInputEl.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Enter') {
-                ev.preventDefault();
-                saveBtn.click();
-            }
-            if (ev.key === 'Escape') {
-                ev.preventDefault();
-                closeModal();
-            }
-        });
-
-        passwordEl.addEventListener('keydown', (ev) => {
-            if (ev.key === 'Enter') unlockBtn.click();
-        });
-    }
-
-    async function initSupabase() {
-        if (!window.supabase) {
-            setStatus('Supabase library did not load.');
-            return;
-        }
-
-        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-        assignStableIds();
-        bindPriceClicks();
-
-        // Load first, then seed any missing rows from the HTML, then load again.
-        await loadPricesFromSupabase();
-        await seedMissingRows();
-        await loadPricesFromSupabase();
-
-        enableEditing(false);
-    }
-
-    // Keep your old table behavior and image rotation untouched.
-    window.addEventListener('load', initSupabase);
-})();
-</script>
-
+    function bindSearch(){searchBtn.addEventListener('click',performSearch);searchInput.addEventListener('keydown',ev=>{if(ev.key==='Enter')performSearch()});closeSearchPopupBtn.addEventListener('click',closeSearchPopup);searchPopup.addEventListener('click',ev=>{if(ev.target===searchPopup)closeSearchPopup()});document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeSearchPopup()})}
+    async function initSupabase(){if(!window.supabase){setStatus('Supabase library did not load.');return}supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);bindAdminSwitch();bindPriceClicks();bindSearch();bindFunDrop();await loadPricesFromSupabase();await seedMissingRows();await loadPricesFromSupabase();enableEditing(false)}
+    window.addEventListener('load',async()=>{renderAll();window.showTable('pvc',false);window.scrollTo({top:0,left:0,behavior:'auto'});await initSupabase()});
+  })();
+  </script>
 </body>
 </html>
